@@ -89,7 +89,10 @@ class _PredModelState extends State<PredModel> {
         title: Text(
           'ML MODEL',
           style: TextStyle(
-              fontSize: 26, color: Colors.black, fontWeight: FontWeight.bold),
+              letterSpacing: 2,
+              fontSize: 26,
+              color: Colors.black,
+              fontWeight: FontWeight.w600),
         ),
         centerTitle: true,
       ),
@@ -98,31 +101,6 @@ class _PredModelState extends State<PredModel> {
         child: DrawerHeader(
           child: ListView(
             children: <Widget>[
-              // Padding(
-              //   padding: const EdgeInsets.only(top: 20.0),
-              //   child: ListTile(
-              //     title: PText(
-              //       "Register",
-              //       color: Colors.black,
-              //       fontSize: 24,
-              //     ),
-              //     subtitle: PText(
-              //       'Connect With Us',
-              //       fontSize: 20,
-              //       color: Colors.black,
-              //     ),
-              //     leading: Icon(
-              //       Icons.login_rounded,
-              //       color: Colors.black,
-              //       size: 50,
-              //     ),
-              //     // onTap: () {
-              //     //   Navigator.of(context).push(MaterialPageRoute(
-              //     //     builder: (context) => LoginPage(),
-              //     //   ));
-              //     // },
-              //   ),
-              // ),
               ListTile(
                 title: PText(
                   "Exercises",
@@ -319,6 +297,7 @@ class _PredModelState extends State<PredModel> {
                             onPressed: predData,
                             child: EXHText(
                               'PREDICT',
+                              weight: FontWeight.normal,
                               fontSize: 18,
                               color: Colors.black,
                             ),

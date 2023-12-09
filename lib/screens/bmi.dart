@@ -280,7 +280,7 @@ class _BMICalculatorState extends State<BMICalculator> {
                                       color: Colors.white, fontSize: 18),
                                   cursorColor: Colors.white,
                                   decoration: InputDecoration(
-                                    label: Text('Height (Inche)'),
+                                    label: Text('Inch'),
                                     prefixIcon: Icon(
                                       Icons.height,
                                       color: Colors.white,
@@ -308,7 +308,11 @@ class _BMICalculatorState extends State<BMICalculator> {
                               calculateBMI();
                               showResultDialog();
                             },
-                            child: Text('Calculate BMI'),
+                            child: Text(
+                              'Calculate BMI',
+                              style: TextStyle(
+                                  letterSpacing: 3, color: Colors.black),
+                            ),
                           ),
                         ),
                         Padding(

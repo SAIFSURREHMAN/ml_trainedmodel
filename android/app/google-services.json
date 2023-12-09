@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "290586834683",
+    "project_id": "trained-gym-trainer-79726",
+    "storage_bucket": "trained-gym-trainer-79726.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:290586834683:android:6dca2e3fe17026157be25e",
+        "android_client_info": {
+          "package_name": "com.example.trainer_trained"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjgUPVqYShTOU5HEV3TrWRvCyWUFEABEU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

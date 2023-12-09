@@ -8,7 +8,7 @@ TextField reUsableTF(String text, IconData icon, bool isPasswordType,
     obscureText: isPasswordType,
     enableSuggestions: !isPasswordType,
     autocorrect: !isPasswordType,
-    cursorColor: Colors.white,
+    cursorColor: Color.fromARGB(255, 3, 86, 13),
     decoration: InputDecoration(
       prefixIcon: Icon(
         icon,
@@ -16,7 +16,7 @@ TextField reUsableTF(String text, IconData icon, bool isPasswordType,
       ),
       labelText: text,
       enabledBorder: const OutlineInputBorder(
-          borderSide: BorderSide(color: Color.fromARGB(255, 3, 222, 14))),
+          borderSide: BorderSide(color: Color.fromARGB(255, 12, 13, 12))),
       labelStyle: const TextStyle(color: Colors.white, fontSize: 18),
     ),
     keyboardType:
@@ -37,7 +37,7 @@ TextField reUsableTFML(
       ),
       labelText: text,
       enabledBorder: const OutlineInputBorder(
-          borderSide: BorderSide(color: Color.fromARGB(255, 2, 52, 4))),
+          borderSide: BorderSide(color: Color.fromARGB(255, 19, 19, 19))),
       labelStyle:
           const TextStyle(color: Color.fromARGB(255, 71, 70, 70), fontSize: 18),
     ),

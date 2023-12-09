@@ -1,5 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import '../PredModel.dart';
+import 'package:quickalert/models/quickalert_type.dart';
+import 'package:quickalert/widgets/quickalert_dialog.dart';
 import '../reuseable/reuseablewidget.dart';
 import '../reuseable/text_constraint.dart';
 import 'login.dart';
@@ -19,188 +22,260 @@ class _RegistrationState extends State<Registration> {
   final TextEditingController _phoneTextController = TextEditingController();
 
   final TextEditingController _emailTextController = TextEditingController();
-  // final fireStore = FirebaseFirestore.instance.collection('users');
+  final fireStore = FirebaseFirestore.instance.collection('users');
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: SafeArea(
-        child: GestureDetector(
-          onTap: () {
-            // FocusScope is used to handle keyboard-related interactions
-            FocusScope.of(context).requestFocus(FocusNode());
-          },
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              Color.fromARGB(255, 12, 196, 89),
+              const Color.fromARGB(255, 9, 8, 9)
+            ],
+          ),
+        ),
+        child: SingleChildScrollView(
           child: Stack(children: [
-            Image.asset(
-              'asset/image/splashscreen.jpg',
-              fit: BoxFit.cover,
-              height: MediaQuery.of(context).size.height,
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Align(
-                  alignment: Alignment.center,
-                  child: PText(
-                    "SIGNUP",
-                    fontSize: 26,
-                    weight: FontWeight.w500,
-                    color: Color.fromARGB(255, 3, 222, 14),
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.center,
-                  child: PText(
-                    "We're thrilled to have you join our community.",
-                    fontSize: 12,
-                    weight: FontWeight.w500,
-                    color: Colors.white,
-                  ),
-                ),
-                Padding(
-                    padding: const EdgeInsets.only(
-                      left: 20,
-                      right: 20,
-                    ),
-                    child: reUsableTF(
-                        "Name", Icons.person, false, _nameTextController)),
-                Padding(
-                    padding: const EdgeInsets.only(
-                      left: 20,
-                      right: 20,
-                    ),
-                    child: reUsableTF(
-                        "Email", Icons.email, false, _emailTextController)),
-                Padding(
-                    padding: const EdgeInsets.only(
-                      left: 20,
-                      right: 20,
-                    ),
-                    child: reUsableTF("Phone Number", Icons.call, false,
-                        _phoneTextController)),
-                Padding(
-                    padding: const EdgeInsets.only(
-                      left: 20,
-                      right: 20,
-                    ),
-                    child: reUsableTF(
-                        "Password", Icons.lock, true, _passwordTextController)),
-                Align(
-                  alignment: Alignment.topCenter,
-                  child: MaterialButton(
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => PredModel(),
-                        ),
-                      );
-
-                      // setState(() {});
-                      // String id = DateTime.now().microsecondsSinceEpoch.toString();
-                      // fireStore
-                      //     .doc(id)
-                      //     .set({
-                      //       'name': _nameTextController.text,
-                      //       'phone': _phoneTextController.text,
-                      //       'email': _emailTextController.text,
-                      //       'password': _passwordTextController.text,
-                      //       'id': id,
-                      //     })
-                      //     .then((value) {})
-                      //     .onError((error, stackTrace) {
-                      //       print('there is an issue');
-                      //     });
-
-                      // FirebaseAuth.instance
-                      //     .createUserWithEmailAndPassword(
-                      //         email: _emailTextController.text,
-                      //         password: _passwordTextController.text)
-                      //     .then((value) {
-                      //   Navigator.of(context).push(
-                      //     MaterialPageRoute(
-                      //       builder: (context) => Login(),
-                      //     ),
-                      //   );
-
-                      //   QuickAlert.show(
-                      //     context: context,
-                      //     type: QuickAlertType.success,
-                      //     text: 'Registeration Successful ',
-                      //     autoCloseDuration: const Duration(seconds: 2),
-                      //   );
-                      // }).onError((error, stackTrace) {
-                      //   QuickAlert.show(
-                      //     context: context,
-                      //     type: QuickAlertType.error,
-                      //     title: 'Oops...',
-                      //     text:
-                      //         'Try To Write Correct Email Format or Strong Password',
-                      //     backgroundColor: Colors.black,
-                      //     titleColor: Colors.white,
-                      //     textColor: Colors.white,
-                      //   );
-                      // });
-                    },
-                    color: const Color.fromARGB(255, 3, 222, 14),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        side: const BorderSide(color: Colors.white)),
-                    child: const Padding(
-                      padding: EdgeInsets.all(10.0),
-                      child: Icon(
-                        Icons.arrow_right_alt_rounded,
-                        size: 30,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
+            GestureDetector(
+                onTap: () {
+                  // FocusScope is used to handle keyboard-related interactions
+                  FocusScope.of(context).requestFocus(FocusNode());
+                },
+                child: Padding(
                   padding: const EdgeInsets.all(20.0),
-                  child: EXHText(
-                    "Or Continue With Login",
-                    fontSize: 18,
-                    color: Colors.white,
-                    weight: FontWeight.normal,
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.topCenter,
                   child: Container(
+                    height: MediaQuery.of(context).size.height,
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 3, 222, 14),
+                        color: Colors.white.withOpacity(0.5),
                         borderRadius: BorderRadius.circular(10)),
                     child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: IconButton(
-                        onPressed: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => Login(),
+                      padding: const EdgeInsets.all(8.0),
+                      child:
+                          // resizeToAvoidBottomInset: false,
+                          // body: SafeArea(
+                          //   child: GestureDetector(
+                          //     onTap: () {
+                          //       // FocusScope is used to handle keyboard-related interactions
+                          //       FocusScope.of(context).requestFocus(FocusNode());
+                          //     },
+                          //     child: Stack(children: [
+                          //       Image.asset(
+                          //         'asset/image/splashscreen.jpg',
+                          //         fit: BoxFit.cover,
+                          //         height: MediaQuery.of(context).size.height,
+                          //       ),
+                          //       Container(
+                          //         child: SingleChildScrollView(
+                          //           child:
+                          Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Align(
+                            alignment: Alignment.center,
+                            child: PText(
+                              "SIGNUP",
+                              fontSize: 26,
+                              weight: FontWeight.w500,
+                              color: Color.fromARGB(255, 230, 235, 231),
                             ),
-                          );
-                        },
-                        icon: const Icon(
-                          Icons.login_rounded,
-                          size: 35,
-                          color: Colors.black,
-                        ),
+                          ),
+                          Align(
+                            alignment: Alignment.center,
+                            child: PText(
+                              "We're thrilled to have you join our community.",
+                              fontSize: 12,
+                              weight: FontWeight.w500,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Padding(
+                              padding: const EdgeInsets.only(
+                                left: 20,
+                                right: 20,
+                              ),
+                              child: reUsableTF("Name", Icons.person, false,
+                                  _nameTextController)),
+                          Padding(
+                              padding: const EdgeInsets.only(
+                                left: 20,
+                                right: 20,
+                              ),
+                              child: reUsableTF("Email", Icons.email, false,
+                                  _emailTextController)),
+                          Padding(
+                              padding: const EdgeInsets.only(
+                                left: 20,
+                                right: 20,
+                              ),
+                              child: reUsableTF("Phone Number", Icons.call,
+                                  false, _phoneTextController)),
+                          Padding(
+                              padding: const EdgeInsets.only(
+                                left: 20,
+                                right: 20,
+                              ),
+                              child: reUsableTF("Password", Icons.lock, true,
+                                  _passwordTextController)),
+                          Align(
+                            alignment: Alignment.topCenter,
+                            child: MaterialButton(
+                              onPressed: () {
+                                setState(() {});
+                                String id = DateTime.now()
+                                    .microsecondsSinceEpoch
+                                    .toString();
+                                fireStore
+                                    .doc(id)
+                                    .set({
+                                      'name': _nameTextController.text,
+                                      'phone': _phoneTextController.text,
+                                      'email': _emailTextController.text,
+                                      'password': _passwordTextController.text,
+                                      'id': id,
+                                    })
+                                    .then((value) {})
+                                    .onError((error, stackTrace) {
+                                      print('there is an issue');
+                                    });
+
+                                FirebaseAuth.instance
+                                    .createUserWithEmailAndPassword(
+                                        email: _emailTextController.text,
+                                        password: _passwordTextController.text)
+                                    .then((value) {
+                                  // QuickAlert.show(
+                                  //   context: context,
+                                  //   type: QuickAlertType.success,
+                                  //   text: 'Registeration Successful ',
+                                  //   autoCloseDuration:
+                                  //       const Duration(seconds: 1),
+                                  // );
+                                }).onError((error, stackTrace) {
+                                  QuickAlert.show(
+                                    context: context,
+                                    type: QuickAlertType.error,
+                                    title: 'Oops...',
+                                    text:
+                                        'Try To Write Correct Email Format or Strong Password',
+                                    backgroundColor: Colors.black,
+                                    titleColor: Colors.white,
+                                    textColor: Colors.white,
+                                  );
+                                }).then((value) {
+                                  QuickAlert.show(
+                                    context: context,
+                                    type: QuickAlertType.success,
+                                    text: 'Registration Successful ',
+                                    autoCloseDuration:
+                                        const Duration(milliseconds: 1),
+                                  );
+
+                                  // Navigate to the login page upon successful registration
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Login()),
+                                  );
+                                }).catchError((error) {
+                                  QuickAlert.show(
+                                    context: context,
+                                    type: QuickAlertType.error,
+                                    title: 'Oops...',
+                                    text: 'Registration failed: $error',
+                                    backgroundColor: Colors.black,
+                                    titleColor: Colors.white,
+                                    textColor: Colors.white,
+                                  );
+                                });
+
+                                // Navigate to the login page upon successful registration
+                                // }).onError((error, stackTrace) {
+                                //   QuickAlert.show(
+                                //     context: context,
+                                //     type: QuickAlertType.error,
+                                //     title: 'Oops...',
+                                //     text:
+                                //         'Try To Write Correct Email Format or Strong Password',
+                                //     backgroundColor: Colors.black,
+                                //     titleColor: Colors.white,
+                                //     textColor: Colors.white,
+                                //   );
+
+                                // Navigator.push(
+                                //   context,
+                                //   MaterialPageRoute(
+                                //       builder: (context) =>
+                                //           Login()), // Replace LoginPage with your actual login page class
+                                // );
+                              },
+                              color: const Color.fromARGB(255, 3, 222, 14),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  side: const BorderSide(color: Colors.white)),
+                              child: const Padding(
+                                padding: EdgeInsets.all(10.0),
+                                child: Icon(
+                                  Icons.arrow_right_alt_rounded,
+                                  size: 30,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: EXHText(
+                              "Or Continue With Login",
+                              fontSize: 18,
+                              color: Colors.white,
+                              weight: FontWeight.normal,
+                            ),
+                          ),
+                          Align(
+                            alignment: Alignment.topCenter,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Color.fromARGB(255, 3, 222, 14),
+                                  borderRadius: BorderRadius.circular(10)),
+                              child: Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: IconButton(
+                                  onPressed: () {
+                                    Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                        builder: (context) => Login(),
+                                      ),
+                                    );
+                                  },
+                                  icon: const Icon(
+                                    Icons.login_rounded,
+                                    size: 35,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 20.0),
+                            child: const PText(
+                              'By registering, you agree to our Terms and Conditions and Privacy Policy.',
+                              fontSize: 12,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 20.0),
-                  child: const PText(
-                    'By registering, you agree to our Terms and Conditions and Privacy Policy.',
-                    fontSize: 12,
-                    color: Colors.white,
-                  ),
-                ),
-              ],
-            ),
+                ))
           ]),
         ),
       ),
