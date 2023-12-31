@@ -50,7 +50,7 @@ class FirstContainer extends StatelessWidget {
         children: [
           ClipRRect(
             child: Image.asset(
-              wlex.picture2 ?? '',
+              wlex.picture1 ?? '',
               height: MediaQuery.of(context).size.height * 0.2,
               width: MediaQuery.of(context).size.width,
               fit: BoxFit.fill,
@@ -65,31 +65,31 @@ class FirstContainer extends StatelessWidget {
             ),
           ),
           EXHText(
-            'Excercise: ${wlex.exname2}',
+            'Excercise: ${wlex.exname1}',
             fontSize: 18,
             color: Colors.black,
             weight: FontWeight.w400,
           ),
           EXHText(
-            'Minimum time: ${wlex.mintime2}',
+            'Minimum time: ${wlex.mintime1}',
             fontSize: 18,
             color: Colors.black,
             weight: FontWeight.w400,
           ),
           EXHText(
-            'Maximum time: ${wlex.maxtime2}',
+            'Maximum time: ${wlex.maxtime1}',
             fontSize: 18,
             color: Colors.black,
             weight: FontWeight.w400,
           ),
           EXHText(
-            'Repetitions: ${wlex.reps2}',
+            'Repetitions: ${wlex.reps1}',
             fontSize: 18,
             color: Colors.black,
             weight: FontWeight.w400,
           ),
           EXHText(
-            'Sets: ${wlex.set2}',
+            'Sets: ${wlex.set1}',
             fontSize: 18,
             color: Colors.black,
             weight: FontWeight.w400,
@@ -107,41 +107,41 @@ class FirstContainer extends StatelessWidget {
                 color: Colors.black,
               ),
               children: [
-                if (wlex.ins21!.isNotEmpty)
+                if (wlex.ins11!.isNotEmpty)
                   WidgetSpan(
                     child: Icon(Icons.arrow_forward,
                         size: 12, color: Colors.black),
                   ),
-                if (wlex.ins21!.isNotEmpty)
+                if (wlex.ins11!.isNotEmpty)
                   TextSpan(
-                    text: '${wlex.ins21}',
+                    text: '${wlex.ins11}',
                   ),
-                if (wlex.ins22!.isNotEmpty)
+                if (wlex.ins12!.isNotEmpty)
                   WidgetSpan(
                     child: Icon(Icons.arrow_forward,
                         size: 12, color: Colors.black),
                   ),
-                if (wlex.ins22!.isNotEmpty)
+                if (wlex.ins12!.isNotEmpty)
                   TextSpan(
-                    text: '${wlex.ins22}',
+                    text: '${wlex.ins12}',
                   ),
-                if (wlex.ins23!.isNotEmpty)
+                if (wlex.ins13!.isNotEmpty)
                   WidgetSpan(
                     child: Icon(Icons.arrow_forward,
                         size: 12, color: Colors.black),
                   ),
-                if (wlex.ins23!.isNotEmpty)
+                if (wlex.ins13!.isNotEmpty)
                   TextSpan(
-                    text: '${wlex.ins23}',
+                    text: '${wlex.ins13}',
                   ),
-                if (wlex.ins24!.isNotEmpty)
+                if (wlex.ins14!.isNotEmpty)
                   WidgetSpan(
                     child: Icon(Icons.arrow_forward,
                         size: 12, color: Colors.black),
                   ),
-                if (wlex.ins24!.isNotEmpty)
+                if (wlex.ins14!.isNotEmpty)
                   TextSpan(
-                    text: '${wlex.ins24}',
+                    text: '${wlex.ins14}',
                   ),
               ],
             ),

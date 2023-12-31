@@ -17,6 +17,9 @@ class DetailPagePl extends StatelessWidget {
             child: Column(
               children: [
                 FirstContainer(plex),
+                SizedBox(
+                  height: 20,
+                ),
                 SecondContainer(plex),
               ],
             ),
@@ -47,7 +50,7 @@ class FirstContainer extends StatelessWidget {
         children: [
           ClipRRect(
             child: Image.asset(
-              plex.picture2 ?? '',
+              plex.picture1 ?? '',
               height: MediaQuery.of(context).size.height * 0.2,
               width: MediaQuery.of(context).size.width,
               fit: BoxFit.fill,
@@ -62,31 +65,31 @@ class FirstContainer extends StatelessWidget {
             ),
           ),
           EXHText(
-            'Excercise: ${plex.exname2}',
+            'Excercise: ${plex.exname1}',
             fontSize: 18,
             color: Colors.black,
             weight: FontWeight.w400,
           ),
           EXHText(
-            'Minimum time: ${plex.mintime2}',
+            'Minimum time: ${plex.mintime1}',
             fontSize: 18,
             color: Colors.black,
             weight: FontWeight.w400,
           ),
           EXHText(
-            'Maximum time: ${plex.maxtime2}',
+            'Maximum time: ${plex.maxtime1}',
             fontSize: 18,
             color: Colors.black,
             weight: FontWeight.w400,
           ),
           EXHText(
-            'Repetitions: ${plex.reps2}',
+            'Repetitions: ${plex.reps1}',
             fontSize: 18,
             color: Colors.black,
             weight: FontWeight.w400,
           ),
           EXHText(
-            'Sets: ${plex.set2}',
+            'Sets: ${plex.set1}',
             fontSize: 18,
             color: Colors.black,
             weight: FontWeight.w400,
@@ -104,41 +107,41 @@ class FirstContainer extends StatelessWidget {
                 color: Colors.black,
               ),
               children: [
-                if (plex.ins21!.isNotEmpty)
+                if (plex.ins11!.isNotEmpty)
                   WidgetSpan(
                     child: Icon(Icons.arrow_forward,
                         size: 12, color: Colors.black),
                   ),
-                if (plex.ins21!.isNotEmpty)
+                if (plex.ins11!.isNotEmpty)
                   TextSpan(
-                    text: '${plex.ins21}',
+                    text: '${plex.ins11}',
                   ),
-                if (plex.ins22!.isNotEmpty)
+                if (plex.ins12!.isNotEmpty)
                   WidgetSpan(
                     child: Icon(Icons.arrow_forward,
                         size: 12, color: Colors.black),
                   ),
-                if (plex.ins22!.isNotEmpty)
+                if (plex.ins12!.isNotEmpty)
                   TextSpan(
-                    text: '${plex.ins22}',
+                    text: '${plex.ins12}',
                   ),
-                if (plex.ins23!.isNotEmpty)
+                if (plex.ins13!.isNotEmpty)
                   WidgetSpan(
                     child: Icon(Icons.arrow_forward,
                         size: 12, color: Colors.black),
                   ),
-                if (plex.ins23!.isNotEmpty)
+                if (plex.ins13!.isNotEmpty)
                   TextSpan(
-                    text: '${plex.ins23}',
+                    text: '${plex.ins13}',
                   ),
-                if (plex.ins24!.isNotEmpty)
+                if (plex.ins14!.isNotEmpty)
                   WidgetSpan(
                     child: Icon(Icons.arrow_forward,
                         size: 12, color: Colors.black),
                   ),
-                if (plex.ins24!.isNotEmpty)
+                if (plex.ins14!.isNotEmpty)
                   TextSpan(
-                    text: '${plex.ins24}',
+                    text: '${plex.ins14}',
                   ),
               ],
             ),

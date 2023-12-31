@@ -44,31 +44,6 @@ class Home extends StatelessWidget {
         child: DrawerHeader(
           child: ListView(
             children: <Widget>[
-              // Padding(
-              //   padding: const EdgeInsets.only(top: 20.0),
-              //   child: ListTile(
-              //     title: PText(
-              //       "Register",
-              //       color: Colors.black,
-              //       fontSize: 24,
-              //     ),
-              //     subtitle: PText(
-              //       'Connect With Us',
-              //       fontSize: 20,
-              //       color: Colors.black,
-              //     ),
-              //     leading: Icon(
-              //       Icons.login_rounded,
-              //       color: Colors.black,
-              //       size: 50,
-              //     ),
-              //     // onTap: () {
-              //     //   Navigator.of(context).push(MaterialPageRoute(
-              //     //     builder: (context) => LoginPage(),
-              //     //   ));
-              //     // },
-              //   ),
-              // ),
               ListTile(
                 title: PText(
                   "Exercises",
@@ -233,17 +208,6 @@ class Home extends StatelessWidget {
                                         weight: FontWeight.w800,
                                       ),
                                     ),
-                                    // Row(
-                                    //   children: [
-                                    // Flexible(
-                                    //   child: EXHText(
-                                    //     mex.detail ?? 'Detail Name',
-                                    //     color: Colors.white,
-                                    //     fontSize: 14,
-                                    //     ml: 1,
-                                    //     weight: FontWeight.w500,
-                                    //   ),
-                                    // ),
                                     Align(
                                       alignment: Alignment.bottomRight,
                                       child: ElevatedButton(

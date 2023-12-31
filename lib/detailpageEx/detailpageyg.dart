@@ -50,7 +50,7 @@ class FirstContainer extends StatelessWidget {
         children: [
           ClipRRect(
             child: Image.asset(
-              ygex.picture2 ?? '',
+              ygex.picture1 ?? '',
               height: MediaQuery.of(context).size.height * 0.2,
               width: MediaQuery.of(context).size.width,
               fit: BoxFit.fill,
@@ -65,31 +65,31 @@ class FirstContainer extends StatelessWidget {
             ),
           ),
           EXHText(
-            'Excercise: ${ygex.exname2}',
+            'Excercise: ${ygex.exname1}',
             fontSize: 18,
             color: Colors.black,
             weight: FontWeight.w400,
           ),
           EXHText(
-            'Minimum time: ${ygex.mintime2}',
+            'Minimum time: ${ygex.mintime1}',
             fontSize: 18,
             color: Colors.black,
             weight: FontWeight.w400,
           ),
           EXHText(
-            'Maximum time: ${ygex.maxtime2}',
+            'Maximum time: ${ygex.maxtime1}',
             fontSize: 18,
             color: Colors.black,
             weight: FontWeight.w400,
           ),
           EXHText(
-            'Repetitions: ${ygex.reps2}',
+            'Repetitions: ${ygex.reps1}',
             fontSize: 18,
             color: Colors.black,
             weight: FontWeight.w400,
           ),
           EXHText(
-            'Sets: ${ygex.set2}',
+            'Sets: ${ygex.set1}',
             fontSize: 18,
             color: Colors.black,
             weight: FontWeight.w400,
@@ -107,41 +107,41 @@ class FirstContainer extends StatelessWidget {
                 color: Colors.black,
               ),
               children: [
-                if (ygex.ins21!.isNotEmpty)
+                if (ygex.ins11!.isNotEmpty)
                   WidgetSpan(
                     child: Icon(Icons.arrow_forward,
                         size: 12, color: Colors.black),
                   ),
-                if (ygex.ins21!.isNotEmpty)
+                if (ygex.ins11!.isNotEmpty)
                   TextSpan(
-                    text: '${ygex.ins21}',
+                    text: '${ygex.ins11}',
                   ),
-                if (ygex.ins22!.isNotEmpty)
+                if (ygex.ins12!.isNotEmpty)
                   WidgetSpan(
                     child: Icon(Icons.arrow_forward,
                         size: 12, color: Colors.black),
                   ),
-                if (ygex.ins22!.isNotEmpty)
+                if (ygex.ins12!.isNotEmpty)
                   TextSpan(
-                    text: '${ygex.ins22}',
+                    text: '${ygex.ins12}',
                   ),
-                if (ygex.ins23!.isNotEmpty)
+                if (ygex.ins13!.isNotEmpty)
                   WidgetSpan(
                     child: Icon(Icons.arrow_forward,
                         size: 12, color: Colors.black),
                   ),
-                if (ygex.ins23!.isNotEmpty)
+                if (ygex.ins13!.isNotEmpty)
                   TextSpan(
-                    text: '${ygex.ins23}',
+                    text: '${ygex.ins13}',
                   ),
-                if (ygex.ins24!.isNotEmpty)
+                if (ygex.ins14!.isNotEmpty)
                   WidgetSpan(
                     child: Icon(Icons.arrow_forward,
                         size: 12, color: Colors.black),
                   ),
-                if (ygex.ins24!.isNotEmpty)
+                if (ygex.ins14!.isNotEmpty)
                   TextSpan(
-                    text: '${ygex.ins24}',
+                    text: '${ygex.ins14}',
                   ),
               ],
             ),

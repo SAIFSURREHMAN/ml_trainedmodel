@@ -41,9 +41,7 @@ dependencies:
   firebase_auth: ^4.7.2
   quickalert: ^1.0.1
   tflite_flutter:
-  curved_navigation_bar:
-  animated_bottom_navigation_bar:
-
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -70,6 +68,14 @@ flutter:
   assets:
     - assets/
     - asset/image/
+    - asset/image/trainer/
+    - asset/image/exercise/
+    - asset/image/exercise/mg/
+    - asset/image/exercise/wl/
+    - asset/image/exercise/yg/
+    - asset/image/exercise/pl/
+    
+
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

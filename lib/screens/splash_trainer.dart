@@ -79,43 +79,26 @@ class Trainer_Splash extends StatelessWidget {
                   ),
                 ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  ElevatedButton(
-                    onPressed: () {
+              Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: Align(
+                  alignment: Alignment.bottomRight,
+                  child: GestureDetector(
+                    onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => Trainer(),
+                        builder: (context) => Registration(),
                       ));
                     },
-                    child: EXHText(
-                      'DISCOVER TRAINER',
-                      fontSize: 18,
-                      color: Colors.black,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: Align(
-                      alignment: Alignment.bottomRight,
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => Registration(),
-                          ));
-                        },
-                        child: CircleAvatar(
-                          radius: 30,
-                          backgroundColor: Color.fromARGB(255, 3, 222, 14),
-                          child: Icon(
-                            Icons.arrow_right_alt_rounded,
-                            size: 50,
-                          ),
-                        ),
+                    child: CircleAvatar(
+                      radius: 30,
+                      backgroundColor: Color.fromARGB(255, 3, 222, 14),
+                      child: Icon(
+                        Icons.arrow_right_alt_rounded,
+                        size: 50,
                       ),
                     ),
                   ),
-                ],
+                ),
               ),
             ],
           ),

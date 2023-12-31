@@ -51,8 +51,6 @@ class EXHText extends StatelessWidget {
         wordSpacing: ws ?? 1,
         letterSpacing: ls ?? 1,
       ),
-      maxLines: 2,
-      overflow: TextOverflow.ellipsis,
     );
   }
 }

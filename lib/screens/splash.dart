@@ -1,11 +1,29 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:trainer_trained/screens/splash_trainer.dart';
 
 import 'home.dart';
 import 'package:trainer_trained/reuseable/text_constraint.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(
+        const Duration(seconds: 8),
+        () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Trainer_Splash()),
+            ));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -69,42 +87,6 @@ class SplashScreen extends StatelessWidget {
                     ' Our services are designed to guide and support you on your journey to a healthier you.\n Start your fitness journey today!',
                     fontSize: 16,
                   ),
-                ),
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.only(left: 20.0, right: 20.0, bottom: 5),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    MaterialButton(
-                        onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => Home(),
-                          ));
-                        },
-                        child: EXHText(
-                          'Skip',
-                          fontSize: 20,
-                          color: Colors.white,
-                        )),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => Trainer_Splash(),
-                        ));
-                      },
-                      child: CircleAvatar(
-                        radius: 30,
-                        backgroundColor: Color.fromARGB(255, 3, 222, 14),
-                        child: Icon(
-                          Icons.arrow_right_alt_rounded,
-                          size: 50,
-                        ),
-                      ),
-                    ),
-                  ],
                 ),
               ),
             ],

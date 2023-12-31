@@ -4,8 +4,15 @@ import 'package:trainer_trained/detailpageEx/detailpageyg.dart';
 import 'package:trainer_trained/reuseable/text_constraint.dart';
 import '../model/mex_model.dart';
 
-class YogaPage extends StatelessWidget {
+class YogaPage extends StatefulWidget {
   const YogaPage({super.key});
+
+  @override
+  State<YogaPage> createState() => _YogaPageState();
+}
+
+class _YogaPageState extends State<YogaPage> {
+  bool isContainerVisible = false;
 
   @override
   Widget build(BuildContext context) {
@@ -27,105 +34,6 @@ class YogaPage extends StatelessWidget {
                   ),
                 ),
               ),
-              // Expanded(
-              //   child: ListView.builder(
-              //       itemCount: ygexList.length,
-              //       shrinkWrap: false,
-              //       itemBuilder: (context, int index) {
-              //         YGEX ygex = ygexList[index];
-
-              //         return Padding(
-              //           padding: EdgeInsets.all(5),
-              //           child: Stack(
-              //             children: [
-              //               ClipRRect(
-              //                 child: ColorFiltered(
-              //                   colorFilter: ColorFilter.mode(
-              //                     Colors.black.withOpacity(0.5), // Blend color
-              //                     BlendMode.colorBurn, // Choose the blend mode
-              //                   ),
-              //                   child: Image.asset(ygex.picture ?? '',
-              //                       height: MediaQuery.of(context).size.height *
-              //                           0.25,
-              //                       fit: BoxFit.cover,
-              //                       width: MediaQuery.of(context).size.width,
-              //                       colorBlendMode: BlendMode.saturation,
-              //                       errorBuilder: (context, error, stackTrace) {
-              //                     return const EXHText('No image');
-              //                   }),
-              //                 ),
-              //                 borderRadius: BorderRadius.circular(25),
-              //               ),
-              //               Padding(
-              //                   padding: const EdgeInsets.only(
-              //                       top: 20, left: 20, right: 20),
-              //                   child: Column(
-              //                     mainAxisAlignment:
-              //                         MainAxisAlignment.spaceBetween,
-              //                     crossAxisAlignment: CrossAxisAlignment.start,
-              //                     children: [
-              //                       Padding(
-              //                         padding: const EdgeInsets.only(),
-              //                         child: EXHText(
-              //                           ygex.name ?? 'Exercise Name',
-              //                           fontSize: 22,
-              //                         ),
-              //                       ),
-              //                       Padding(
-              //                         padding: const EdgeInsets.only(
-              //                             top: 30, bottom: 30),
-              //                         child: EXHText(
-              //                           ygex.desc ?? 'Exercise Description',
-              //                           color: Colors.white,
-              //                           fontSize: 18,
-              //                           weight: FontWeight.w800,
-              //                         ),
-              //                       ),
-              //                       Row(
-              //                         children: [
-              //                           Flexible(
-              //                             child: EXHText(
-              //                               ygex.detail ?? 'Detail Name',
-              //                               color: Colors.white,
-              //                               fontSize: 14,
-              //                               ml: 1,
-              //                               weight: FontWeight.w500,
-              //                             ),
-              //                           ),
-              //                           Container(
-              //                             decoration: BoxDecoration(
-              //                                 borderRadius:
-              //                                     BorderRadius.circular(20)),
-              //                             child: ElevatedButton(
-              //                               onPressed: () {
-              //                                 Navigator.of(context)
-              //                                     .push(MaterialPageRoute(
-              //                                   builder: (context) =>
-              //                                       DetailPageYg(ygex),
-              //                                 ));
-              //                               },
-              //                               style: ButtonStyle(
-              //                                   backgroundColor:
-              //                                       MaterialStateProperty.all(
-              //                                           Color.fromARGB(
-              //                                               255, 3, 222, 14))),
-              //                               child: EXHText(
-              //                                 'Try',
-              //                                 ls: 2,
-              //                                 color: Colors.black,
-              //                                 fontSize: 16,
-              //                               ),
-              //                             ),
-              //                           )
-              //                         ],
-              //                       ),
-              //                     ],
-              //                   ))
-              //             ],
-              //           ),
-              //         );
-              //       }),
-              // ),
               Expanded(
                 child: GridView.builder(
                   gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
@@ -144,7 +52,7 @@ class YogaPage extends StatelessWidget {
                           ClipRRect(
                             child: ColorFiltered(
                               colorFilter: ColorFilter.mode(
-                                Colors.black.withOpacity(0.5),
+                                Colors.black.withOpacity(0.1),
                                 BlendMode.colorBurn,
                               ),
                               child: Image.asset(
@@ -153,7 +61,7 @@ class YogaPage extends StatelessWidget {
                                     MediaQuery.of(context).size.height * 0.25,
                                 fit: BoxFit.cover,
                                 width: MediaQuery.of(context).size.width,
-                                colorBlendMode: BlendMode.saturation,
+                                //   colorBlendMode: BlendMode.saturation,
                                 errorBuilder: (context, error, stackTrace) {
                                   return const EXHText('No image');
                                 },
@@ -172,12 +80,15 @@ class YogaPage extends StatelessWidget {
                                   ygex.name ?? 'Exercise Name',
                                   fontSize: 16,
                                 ),
-                                EXHText(
-                                  ygex.desc ?? 'Exercise Description',
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                  ls: 2,
-                                  weight: FontWeight.normal,
+                                Container(
+                                  color: Colors.black.withOpacity(0.2),
+                                  child: EXHText(
+                                    ygex.desc ?? 'Exercise Description',
+                                    color: Colors.white,
+                                    fontSize: 16,
+                                    ls: 2,
+                                    weight: FontWeight.normal,
+                                  ),
                                 ),
                                 Align(
                                   alignment: Alignment.bottomRight,
@@ -213,6 +124,83 @@ class YogaPage extends StatelessWidget {
                   },
                 ),
               ),
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    isContainerVisible = !isContainerVisible;
+                  });
+                },
+                child: Center(
+                  child: Icon(
+                    isContainerVisible
+                        ? Icons.arrow_circle_down
+                        : Icons.arrow_circle_up,
+                    // Change to the desired icons
+                    size: 50,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+              // Container that will be shown/hidden based on the icon press
+              if (isContainerVisible)
+                Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        Color.fromRGBO(62, 167, 78, 1),
+                        Colors.black.withOpacity(0.8)
+                      ],
+                    ),
+                    borderRadius: BorderRadius.circular(25),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                        top: 5, left: 20, right: 20, bottom: 5),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Center(
+                          child: EXHText(
+                            'TIP',
+                            fontSize: 16,
+                            weight: FontWeight.bold,
+                          ),
+                        ),
+                        EXHText(
+                          'Yoga Tips',
+                          fontSize: 14,
+                          color: Colors.white,
+                          weight: FontWeight.normal,
+                        ),
+                        EXHText(
+                          'Practice regularly: ',
+                          fontSize: 14,
+                          color: Colors.white,
+                          weight: FontWeight.bold,
+                        ),
+                        EXHText(
+                          'Consistent yoga practice improves flexibility, strength, and mental well-being. Aim for at least 30 minutes of yoga per day.',
+                          color: Colors.white,
+                          fontSize: 12,
+                          weight: FontWeight.normal,
+                        ),
+                        EXHText(
+                          'Focus on mindfulness: ',
+                          color: Colors.white,
+                          fontSize: 14,
+                          weight: FontWeight.bold,
+                        ),
+                        EXHText(
+                          'Incorporate mindfulness and deep breathing into your practice for stress reduction and relaxation.',
+                          color: Colors.white,
+                          fontSize: 14,
+                          weight: FontWeight.normal,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
             ],
           ),
         ),

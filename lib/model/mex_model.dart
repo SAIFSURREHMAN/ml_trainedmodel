@@ -3,11 +3,16 @@ class TRAINER {
   String? name;
   String? desc;
   String? detail;
+  String? contact;
+  String? award;
+
   String? picture;
   TRAINER({
     this.name,
     this.desc,
     this.detail,
+    this.contact,
+    this.award,
     this.picture,
   });
 
@@ -15,6 +20,8 @@ class TRAINER {
     name = map['name'];
     desc = map['desc'];
     detail = map['detail'];
+    contact = map['contact'];
+    award = map['award'];
     picture = map['picture'];
   }
 
@@ -23,6 +30,9 @@ class TRAINER {
     data['name'] = this.name;
     data['desc'] = this.desc;
     data['detail'] = this.detail;
+    data['contact'] = this.contact;
+    data['award'] = this.award;
+
     data['picture'] = this.picture;
     return data;
   }
@@ -32,19 +42,16 @@ class TRAINER {
 class MEX {
   String? name;
   String? desc;
-  String? detail;
   String? picture;
   MEX({
     this.name,
     this.desc,
-    this.detail,
     this.picture,
   });
 
   MEX.fromBackend(Map<String, dynamic> map) {
     name = map['name'];
     desc = map['desc'];
-    detail = map['detail'];
     picture = map['picture'];
   }
 
@@ -52,7 +59,6 @@ class MEX {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['name'] = this.name;
     data['desc'] = this.desc;
-    data['detail'] = this.detail;
     data['picture'] = this.picture;
     return data;
   }
@@ -63,8 +69,8 @@ class MEX {
 class WGEX {
   String? name;
   String? desc;
-  String? detail;
   String? picture;
+
   //1st exx
   String? exname1;
   String? mintime1;
@@ -91,8 +97,8 @@ class WGEX {
   WGEX(
       {this.name,
       this.desc,
-      this.detail,
       this.picture,
+
       ////ex 1
       this.exname1,
       this.mintime1,
@@ -120,8 +126,8 @@ class WGEX {
   WGEX.fromBackend(Map<String, dynamic> map) {
     name = map['name'];
     desc = map['desc'];
-    detail = map['detail'];
     picture = map['picture'];
+
     /////ex 1
     exname1 = map['exname1'];
     mintime1 = map['mintime1'];
@@ -149,9 +155,10 @@ class WGEX {
   Map<String, dynamic> toBackend() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['name'] = this.name;
+
     data['desc'] = this.desc;
-    data['detail'] = this.detail;
     data['picture'] = this.picture;
+
     //////ex 1
     data['exname1'] = this.exname1;
     data['mintime1'] = this.mintime1;
@@ -183,7 +190,6 @@ class WGEX {
 class WLEX {
   String? name;
   String? desc;
-  String? detail;
   String? picture;
   //1st exx
   String? exname1;
@@ -211,7 +217,6 @@ class WLEX {
   WLEX(
       {this.name,
       this.desc,
-      this.detail,
       this.picture,
       ////ex 1
       this.exname1,
@@ -240,7 +245,6 @@ class WLEX {
   WLEX.fromBackend(Map<String, dynamic> map) {
     name = map['name'];
     desc = map['desc'];
-    detail = map['detail'];
     picture = map['picture'];
     /////ex 1
     exname1 = map['exname1'];
@@ -270,7 +274,6 @@ class WLEX {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['name'] = this.name;
     data['desc'] = this.desc;
-    data['detail'] = this.detail;
     data['picture'] = this.picture;
     //////ex 1
     data['exname1'] = this.exname1;
@@ -302,7 +305,6 @@ class WLEX {
 class YGEX {
   String? name;
   String? desc;
-  String? detail;
   String? picture;
   //1st exx
   String? exname1;
@@ -330,7 +332,6 @@ class YGEX {
   YGEX(
       {this.name,
       this.desc,
-      this.detail,
       this.picture,
       ////ex 1
       this.exname1,
@@ -359,7 +360,6 @@ class YGEX {
   YGEX.fromBackend(Map<String, dynamic> map) {
     name = map['name'];
     desc = map['desc'];
-    detail = map['detail'];
     picture = map['picture'];
     /////ex 1
     exname1 = map['exname1'];
@@ -389,7 +389,6 @@ class YGEX {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['name'] = this.name;
     data['desc'] = this.desc;
-    data['detail'] = this.detail;
     data['picture'] = this.picture;
     //////ex 1
     data['exname1'] = this.exname1;
@@ -421,7 +420,6 @@ class YGEX {
 class PLEX {
   String? name;
   String? desc;
-  String? detail;
   String? picture;
 //1st exx
   String? exname1;
@@ -449,7 +447,6 @@ class PLEX {
   PLEX(
       {this.name,
       this.desc,
-      this.detail,
       this.picture,
       ////ex 1
       this.exname1,
@@ -478,7 +475,6 @@ class PLEX {
   PLEX.fromBackend(Map<String, dynamic> map) {
     name = map['name'];
     desc = map['desc'];
-    detail = map['detail'];
     picture = map['picture'];
     /////ex 1
     exname1 = map['exname1'];
@@ -508,7 +504,6 @@ class PLEX {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['name'] = this.name;
     data['desc'] = this.desc;
-    data['detail'] = this.detail;
     data['picture'] = this.picture;
     //////ex 1
     data['exname1'] = this.exname1;

@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:trainer_trained/PredModel.dart';
 import 'package:trainer_trained/screens/about.dart';
@@ -7,7 +8,25 @@ import 'package:trainer_trained/screens/trainers.dart';
 
 import '../reuseable/text_constraint.dart';
 
-class ContactUsPage extends StatelessWidget {
+class ContactUsPage extends StatefulWidget {
+  ContactUsPage({super.key});
+
+  @override
+  State<ContactUsPage> createState() => _ContactUsPageState();
+}
+
+class _ContactUsPageState extends State<ContactUsPage> {
+  final TextEditingController _nameTextController = TextEditingController();
+
+  final TextEditingController _emailTextController = TextEditingController();
+
+  final TextEditingController _messageTextController = TextEditingController();
+
+  GlobalKey<FormState> key = GlobalKey();
+
+  CollectionReference _reference =
+      FirebaseFirestore.instance.collection('users_review');
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,31 +40,6 @@ class ContactUsPage extends StatelessWidget {
         child: DrawerHeader(
           child: ListView(
             children: <Widget>[
-              // Padding(
-              //   padding: const EdgeInsets.only(top: 20.0),
-              //   child: ListTile(
-              //     title: PText(
-              //       "Register",
-              //       color: Colors.black,
-              //       fontSize: 24,
-              //     ),
-              //     subtitle: PText(
-              //       'Connect With Us',
-              //       fontSize: 20,
-              //       color: Colors.black,
-              //     ),
-              //     leading: Icon(
-              //       Icons.login_rounded,
-              //       color: Colors.black,
-              //       size: 50,
-              //     ),
-              //     // onTap: () {
-              //     //   Navigator.of(context).push(MaterialPageRoute(
-              //     //     builder: (context) => LoginPage(),
-              //     //   ));
-              //     // },
-              //   ),
-              // ),
               ListTile(
                 title: PText(
                   "Exercises",
@@ -211,85 +205,129 @@ class ContactUsPage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 10),
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: 'Your Name',
-                  labelStyle: TextStyle(
-                    color: Colors.black,
-                    fontSize: 20, // Increase font size
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Colors.grey), // Grey border color
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Colors.grey), // Grey border color
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: 'Your Email',
-                  labelStyle: TextStyle(
-                    color: Colors.black,
-                    fontSize: 20, // Increase font size
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Colors.grey), // Grey border color
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Colors.grey), // Grey border color
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: 'Message',
-                  labelStyle: TextStyle(
-                    color: Colors.black,
-                    fontSize: 20, // Increase font size
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Colors.grey), // Grey border color
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Colors.grey), // Grey border color
-                  ),
-                ),
-                maxLines: 4,
-              ),
-              SizedBox(height: 20),
-              Container(
-                // Wrap the button with a Container
-                color: Colors.white, // Set background color for the button
-                child: ElevatedButton(
-                  onPressed: () {
-                    // Implement sending the message
-                  },
-                  child: Text(
-                    'Send Message',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 20, // Increase font size
-                    ),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    foregroundColor: Colors.white,
-                    backgroundColor: Colors.greenAccent, // Button text color
-                  ),
-                ),
-              ),
+              Form(
+                  key: key,
+                  child: Column(
+                    children: [
+                      TextFormField(
+                        controller: _nameTextController,
+                        decoration: InputDecoration(
+                          labelText: 'Your Name',
+                          labelStyle: TextStyle(
+                            color: Colors.black,
+                            fontSize: 20, // Increase font size
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Colors.grey), // Grey border color
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Colors.grey), // Grey border color
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      TextFormField(
+                        controller: _emailTextController,
+                        decoration: InputDecoration(
+                          labelText: 'Your Email',
+                          labelStyle: TextStyle(
+                            color: Colors.black,
+                            fontSize: 20, // Increase font size
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Colors.grey), // Grey border color
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Colors.grey), // Grey border color
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      TextFormField(
+                        controller: _messageTextController,
+                        decoration: InputDecoration(
+                          labelText: 'Message',
+                          labelStyle: TextStyle(
+                            color: Colors.black,
+                            fontSize: 20, // Increase font size
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Colors.grey), // Grey border color
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Colors.grey), // Grey border color
+                          ),
+                        ),
+                        maxLines: 4,
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      ElevatedButton(
+                        onPressed: () async {
+                          if (key.currentState!.validate()) {
+                            String name = _nameTextController.text;
+                            String email = _emailTextController.text;
+                            String message = _messageTextController.text;
+
+                            Map<String, String> dataToSend = {
+                              'name': name,
+                              'email': email,
+                              'message': message,
+                            };
+
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => Home(),
+                            ));
+                            _reference.add(dataToSend);
+                          }
+                        },
+                        child: Text(
+                          'Send Message',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 20, // Increase font size
+                          ),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          foregroundColor: Colors.white,
+                          backgroundColor:
+                              Colors.greenAccent, // Button text color
+                        ),
+                      ),
+                    ],
+                  )),
+              // SizedBox(height: 20),
+              // Container(
+              //   // Wrap the button with a Container
+              //   color: Colors.white, // Set background color for the button
+              //   child: ElevatedButton(
+              //     onPressed: () {
+              //       // Implement sending the message
+              //     },
+              //     child: Text(
+              //       'Send Message',
+              //       style: TextStyle(
+              //         color: Colors.black,
+              //         fontSize: 20, // Increase font size
+              //       ),
+              //     ),
+              //     style: ElevatedButton.styleFrom(
+              //       foregroundColor: Colors.white,
+              //       backgroundColor: Colors.greenAccent, // Button text color
+              //     ),
+              //   ),
+              // ),
             ],
           ),
         ),
