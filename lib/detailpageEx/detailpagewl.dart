@@ -17,7 +17,7 @@ class DetailPageWl extends StatelessWidget {
             child: Column(
               children: [
                 FirstContainer(wlex),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 SecondContainer(wlex),
@@ -38,7 +38,7 @@ class FirstContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         border:
             Border.all(color: Colors.black, style: BorderStyle.solid, width: 3),
@@ -94,7 +94,7 @@ class FirstContainer extends StatelessWidget {
             color: Colors.black,
             weight: FontWeight.w400,
           ),
-          EXHText(
+          const EXHText(
             'INSTRUCTIONS:',
             fontSize: 18,
             color: Colors.black,
@@ -102,13 +102,13 @@ class FirstContainer extends StatelessWidget {
           ),
           RichText(
             text: TextSpan(
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 16.0,
                 color: Colors.black,
               ),
               children: [
                 if (wlex.ins11!.isNotEmpty)
-                  WidgetSpan(
+                  const WidgetSpan(
                     child: Icon(Icons.arrow_forward,
                         size: 12, color: Colors.black),
                   ),
@@ -117,7 +117,7 @@ class FirstContainer extends StatelessWidget {
                     text: '${wlex.ins11}',
                   ),
                 if (wlex.ins12!.isNotEmpty)
-                  WidgetSpan(
+                  const WidgetSpan(
                     child: Icon(Icons.arrow_forward,
                         size: 12, color: Colors.black),
                   ),
@@ -126,7 +126,7 @@ class FirstContainer extends StatelessWidget {
                     text: '${wlex.ins12}',
                   ),
                 if (wlex.ins13!.isNotEmpty)
-                  WidgetSpan(
+                  const WidgetSpan(
                     child: Icon(Icons.arrow_forward,
                         size: 12, color: Colors.black),
                   ),
@@ -135,7 +135,7 @@ class FirstContainer extends StatelessWidget {
                     text: '${wlex.ins13}',
                   ),
                 if (wlex.ins14!.isNotEmpty)
-                  WidgetSpan(
+                  const WidgetSpan(
                     child: Icon(Icons.arrow_forward,
                         size: 12, color: Colors.black),
                   ),
@@ -216,7 +216,7 @@ class SecondContainer extends StatelessWidget {
             color: Colors.black,
             weight: FontWeight.w400,
           ),
-          EXHText(
+          const EXHText(
             'INSTRUCTIONS:',
             fontSize: 18,
             color: Colors.black,
@@ -224,13 +224,13 @@ class SecondContainer extends StatelessWidget {
           ),
           RichText(
             text: TextSpan(
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 16.0,
                 color: Colors.black,
               ),
               children: [
                 if (wlex.ins21!.isNotEmpty)
-                  WidgetSpan(
+                  const WidgetSpan(
                     child: Icon(Icons.arrow_forward,
                         size: 12, color: Colors.black),
                   ),
@@ -239,7 +239,7 @@ class SecondContainer extends StatelessWidget {
                     text: '${wlex.ins21}',
                   ),
                 if (wlex.ins22!.isNotEmpty)
-                  WidgetSpan(
+                  const WidgetSpan(
                     child: Icon(Icons.arrow_forward,
                         size: 12, color: Colors.black),
                   ),
@@ -248,7 +248,7 @@ class SecondContainer extends StatelessWidget {
                     text: '${wlex.ins22}',
                   ),
                 if (wlex.ins23!.isNotEmpty)
-                  WidgetSpan(
+                  const WidgetSpan(
                     child: Icon(Icons.arrow_forward,
                         size: 12, color: Colors.black),
                   ),
@@ -257,7 +257,7 @@ class SecondContainer extends StatelessWidget {
                     text: '${wlex.ins23}',
                   ),
                 if (wlex.ins24!.isNotEmpty)
-                  WidgetSpan(
+                  const WidgetSpan(
                     child: Icon(Icons.arrow_forward,
                         size: 12, color: Colors.black),
                   ),

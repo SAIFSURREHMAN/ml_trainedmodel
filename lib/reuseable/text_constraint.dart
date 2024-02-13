@@ -14,7 +14,7 @@ class PText extends StatelessWidget {
       text,
       textAlign: TextAlign.center,
       style: GoogleFonts.poppins(
-        color: color ?? Color.fromARGB(255, 239, 241, 241),
+        color: color ?? const Color.fromARGB(255, 239, 241, 241),
         fontSize: fontSize ?? 14,
         fontWeight: weight ?? FontWeight.normal,
       ),
@@ -45,7 +45,7 @@ class EXHText extends StatelessWidget {
       text,
       textAlign: TextAlign.left,
       style: GoogleFonts.poppins(
-        color: color ?? Color.fromARGB(255, 3, 222, 14),
+        color: color ?? const Color.fromARGB(255, 3, 222, 14),
         fontSize: fontSize ?? 30,
         fontWeight: weight ?? FontWeight.bold,
         wordSpacing: ws ?? 1,

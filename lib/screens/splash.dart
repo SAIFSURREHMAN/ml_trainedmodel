@@ -1,9 +1,6 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:trainer_trained/screens/splash_trainer.dart';
-
-import 'home.dart';
 import 'package:trainer_trained/reuseable/text_constraint.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -46,26 +43,27 @@ class _SplashScreenState extends State<SplashScreen> {
                 decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
-                        Color.fromARGB(255, 18, 18, 18),
-                        Color.fromARGB(255, 139, 139, 142).withOpacity(0.5)
+                        const Color.fromARGB(255, 18, 18, 18),
+                        const Color.fromARGB(255, 139, 139, 142)
+                            .withOpacity(0.5)
                       ],
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                     ),
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                         topRight: Radius.circular(10),
                         bottomRight: Radius.circular(10))),
-                child: Text(
+                child: const Text(
                   'CHOOSE YOUR TRAINER ',
                   style: TextStyle(
-                    color: const Color.fromARGB(255, 3, 222, 14),
+                    color: Color.fromARGB(255, 3, 222, 14),
                     fontSize: 28,
                     fontWeight: FontWeight.w700,
                     wordSpacing: 1,
                   ),
                 ),
               ),
-              PText(
+              const PText(
                 'Getting fit is not just a choice; it\'s a commitment to a healthier, more fulfilling life.',
                 color: Color.fromARGB(255, 248, 253, 248),
                 fontSize: 20,
@@ -76,14 +74,15 @@ class _SplashScreenState extends State<SplashScreen> {
                   decoration: BoxDecoration(
                       gradient: LinearGradient(
                         colors: [
-                          Color.fromARGB(255, 139, 139, 142).withOpacity(0.5),
-                          Color.fromARGB(255, 18, 18, 18)
+                          const Color.fromARGB(255, 139, 139, 142)
+                              .withOpacity(0.5),
+                          const Color.fromARGB(255, 18, 18, 18)
                         ],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),
                       borderRadius: BorderRadius.circular(20)),
-                  child: PText(
+                  child: const PText(
                     ' Our services are designed to guide and support you on your journey to a healthier you.\n Start your fitness journey today!',
                     fontSize: 16,
                   ),

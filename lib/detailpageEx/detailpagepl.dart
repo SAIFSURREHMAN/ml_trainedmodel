@@ -5,7 +5,7 @@ import '../reuseable/text_constraint.dart';
 class DetailPagePl extends StatelessWidget {
   final PLEX plex;
 
-  DetailPagePl(this.plex);
+  const DetailPagePl(this.plex, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class DetailPagePl extends StatelessWidget {
             child: Column(
               children: [
                 FirstContainer(plex),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 SecondContainer(plex),
@@ -38,7 +38,7 @@ class FirstContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         border:
             Border.all(color: Colors.black, style: BorderStyle.solid, width: 3),
@@ -59,7 +59,7 @@ class FirstContainer extends StatelessWidget {
                 return const Text('No image');
               },
             ),
-            borderRadius: BorderRadius.only(
+            borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(15),
               bottomRight: Radius.circular(15),
             ),
@@ -94,7 +94,7 @@ class FirstContainer extends StatelessWidget {
             color: Colors.black,
             weight: FontWeight.w400,
           ),
-          EXHText(
+          const EXHText(
             'INSTRUCTIONS:',
             fontSize: 18,
             color: Colors.black,
@@ -102,13 +102,13 @@ class FirstContainer extends StatelessWidget {
           ),
           RichText(
             text: TextSpan(
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 16.0,
                 color: Colors.black,
               ),
               children: [
                 if (plex.ins11!.isNotEmpty)
-                  WidgetSpan(
+                  const WidgetSpan(
                     child: Icon(Icons.arrow_forward,
                         size: 12, color: Colors.black),
                   ),
@@ -117,7 +117,7 @@ class FirstContainer extends StatelessWidget {
                     text: '${plex.ins11}',
                   ),
                 if (plex.ins12!.isNotEmpty)
-                  WidgetSpan(
+                  const WidgetSpan(
                     child: Icon(Icons.arrow_forward,
                         size: 12, color: Colors.black),
                   ),
@@ -126,7 +126,7 @@ class FirstContainer extends StatelessWidget {
                     text: '${plex.ins12}',
                   ),
                 if (plex.ins13!.isNotEmpty)
-                  WidgetSpan(
+                  const WidgetSpan(
                     child: Icon(Icons.arrow_forward,
                         size: 12, color: Colors.black),
                   ),
@@ -135,7 +135,7 @@ class FirstContainer extends StatelessWidget {
                     text: '${plex.ins13}',
                   ),
                 if (plex.ins14!.isNotEmpty)
-                  WidgetSpan(
+                  const WidgetSpan(
                     child: Icon(Icons.arrow_forward,
                         size: 12, color: Colors.black),
                   ),
@@ -216,7 +216,7 @@ class SecondContainer extends StatelessWidget {
             color: Colors.black,
             weight: FontWeight.w400,
           ),
-          EXHText(
+          const EXHText(
             'INSTRUCTIONS:',
             fontSize: 18,
             color: Colors.black,
@@ -224,13 +224,13 @@ class SecondContainer extends StatelessWidget {
           ),
           RichText(
             text: TextSpan(
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 16.0,
                 color: Colors.black,
               ),
               children: [
                 if (plex.ins21!.isNotEmpty)
-                  WidgetSpan(
+                  const WidgetSpan(
                     child: Icon(Icons.arrow_forward,
                         size: 12, color: Colors.black),
                   ),
@@ -239,7 +239,7 @@ class SecondContainer extends StatelessWidget {
                     text: '${plex.ins21}',
                   ),
                 if (plex.ins22!.isNotEmpty)
-                  WidgetSpan(
+                  const WidgetSpan(
                     child: Icon(Icons.arrow_forward,
                         size: 12, color: Colors.black),
                   ),
@@ -248,7 +248,7 @@ class SecondContainer extends StatelessWidget {
                     text: '${plex.ins22}',
                   ),
                 if (plex.ins23!.isNotEmpty)
-                  WidgetSpan(
+                  const WidgetSpan(
                     child: Icon(Icons.arrow_forward,
                         size: 12, color: Colors.black),
                   ),
@@ -257,7 +257,7 @@ class SecondContainer extends StatelessWidget {
                     text: '${plex.ins23}',
                   ),
                 if (plex.ins24!.isNotEmpty)
-                  WidgetSpan(
+                  const WidgetSpan(
                     child: Icon(Icons.arrow_forward,
                         size: 12, color: Colors.black),
                   ),

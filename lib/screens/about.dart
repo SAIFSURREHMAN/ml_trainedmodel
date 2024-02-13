@@ -8,11 +8,13 @@ import 'bmi.dart';
 import 'home.dart';
 
 class AboutPage extends StatelessWidget {
+  const AboutPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'About Our App',
           style: TextStyle(
             fontWeight: FontWeight.bold,
@@ -26,33 +28,8 @@ class AboutPage extends StatelessWidget {
         child: DrawerHeader(
           child: ListView(
             children: <Widget>[
-              // Padding(
-              //   padding: const EdgeInsets.only(top: 20.0),
-              //   child: ListTile(
-              //     title: PText(
-              //       "Register",
-              //       color: Colors.black,
-              //       fontSize: 24,
-              //     ),
-              //     subtitle: PText(
-              //       'Connect With Us',
-              //       fontSize: 20,
-              //       color: Colors.black,
-              //     ),
-              //     leading: Icon(
-              //       Icons.login_rounded,
-              //       color: Colors.black,
-              //       size: 50,
-              //     ),
-              //     // onTap: () {
-              //     //   Navigator.of(context).push(MaterialPageRoute(
-              //     //     builder: (context) => LoginPage(),
-              //     //   ));
-              //     // },
-              //   ),
-              // ),
               ListTile(
-                title: PText(
+                title: const PText(
                   "Exercises",
                   fontSize: 18,
                   color: Colors.black,
@@ -64,11 +41,11 @@ class AboutPage extends StatelessWidget {
                   ));
                 },
               ),
-              Divider(
+              const Divider(
                 height: 20,
               ),
               ListTile(
-                title: PText(
+                title: const PText(
                   "Choose Trainer",
                   fontSize: 18,
                   color: Colors.black,
@@ -76,15 +53,15 @@ class AboutPage extends StatelessWidget {
                 leading: Image.asset('asset/image/pred.png'),
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => PredModel(),
+                    builder: (context) => const PredModel(),
                   ));
                 },
               ),
-              Divider(
+              const Divider(
                 height: 20,
               ),
               ListTile(
-                title: PText(
+                title: const PText(
                   "Trainers",
                   fontSize: 18,
                   color: Colors.black,
@@ -92,15 +69,15 @@ class AboutPage extends StatelessWidget {
                 leading: Image.asset('asset/image/trainericons.png'),
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => Trainer(),
+                    builder: (context) => const Trainer(),
                   ));
                 },
               ),
-              Divider(
+              const Divider(
                 height: 20,
               ),
               ListTile(
-                title: PText(
+                title: const PText(
                   "Calculate BMI",
                   fontSize: 18,
                   color: Colors.black,
@@ -113,36 +90,36 @@ class AboutPage extends StatelessWidget {
                   ));
                 },
               ),
-              Divider(
+              const Divider(
                 height: 20,
               ),
               ListTile(
-                title: PText(
+                title: const PText(
                   "About",
                   fontSize: 18,
                   color: Colors.black,
                 ),
-                leading: Icon(
+                leading: const Icon(
                   Icons.info,
                   color: Colors.black,
                   size: 40,
                 ),
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => AboutPage(),
+                    builder: (context) => const AboutPage(),
                   ));
                 },
               ),
-              Divider(
+              const Divider(
                 height: 20,
               ),
               ListTile(
-                title: PText(
+                title: const PText(
                   "Contact Us",
                   fontSize: 18,
                   color: Colors.black,
                 ),
-                leading: Icon(
+                leading: const Icon(
                   Icons.contact_mail,
                   color: Colors.black,
                   size: 40,
@@ -157,9 +134,9 @@ class AboutPage extends StatelessWidget {
           ),
         ),
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(16.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -192,13 +169,13 @@ class AboutPage extends StatelessWidget {
               SizedBox(height: 10),
               ListTile(
                 leading: Icon(Icons.email, color: Colors.black, size: 40),
-                title: Text('Email: contact@example.com',
-                    style: TextStyle(color: Colors.black)), // Text color
+                title: PText('Email: saifrehman005@gmail.com',
+                    color: Colors.black), // Text color
               ),
               ListTile(
                 leading: Icon(Icons.phone, color: Colors.black, size: 40),
-                title: Text('Phone: +123-456-7890',
-                    style: TextStyle(color: Colors.black)), // Text color
+                title: PText('Phone: 03129220552',
+                    color: Colors.black), // Text color
               ),
               ListTile(
                 leading: Icon(
@@ -206,8 +183,9 @@ class AboutPage extends StatelessWidget {
                   color: Colors.black,
                   size: 40,
                 ),
-                title: Text('Address: 123 Main St, City, Country',
-                    style: TextStyle(color: Colors.black)), // Text color
+                title: PText(
+                    'Address: Sindh Madersatul Islam University, II chundrigarh Road, Karachi',
+                    color: Colors.black), // Text color
               ),
               SizedBox(height: 20),
               Text(

@@ -18,14 +18,14 @@ class Trainer extends StatelessWidget {
       appBar: AppBar(
         leading: Builder(
           builder: (context) => IconButton(
-            icon: new Icon(
+            icon: const Icon(
               Icons.menu,
               size: 30,
             ),
             onPressed: () => Scaffold.of(context).openDrawer(),
           ),
         ),
-        title: Text(
+        title: const Text(
           'TRAINERS',
           style: TextStyle(
               fontSize: 26,
@@ -40,7 +40,7 @@ class Trainer extends StatelessWidget {
           child: ListView(
             children: <Widget>[
               ListTile(
-                title: PText(
+                title: const PText(
                   "Exercises",
                   fontSize: 18,
                   color: Colors.black,
@@ -52,11 +52,11 @@ class Trainer extends StatelessWidget {
                   ));
                 },
               ),
-              Divider(
+              const Divider(
                 height: 20,
               ),
               ListTile(
-                title: PText(
+                title: const PText(
                   "Choose Trainer",
                   fontSize: 18,
                   color: Colors.black,
@@ -64,15 +64,15 @@ class Trainer extends StatelessWidget {
                 leading: Image.asset('asset/image/pred.png'),
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => PredModel(),
+                    builder: (context) => const PredModel(),
                   ));
                 },
               ),
-              Divider(
+              const Divider(
                 height: 20,
               ),
               ListTile(
-                title: PText(
+                title: const PText(
                   "Trainers",
                   fontSize: 18,
                   color: Colors.black,
@@ -80,15 +80,15 @@ class Trainer extends StatelessWidget {
                 leading: Image.asset('asset/image/trainericons.png'),
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => Trainer(),
+                    builder: (context) => const Trainer(),
                   ));
                 },
               ),
-              Divider(
+              const Divider(
                 height: 20,
               ),
               ListTile(
-                title: PText(
+                title: const PText(
                   "Calculate BMI",
                   fontSize: 18,
                   color: Colors.black,
@@ -101,36 +101,36 @@ class Trainer extends StatelessWidget {
                   ));
                 },
               ),
-              Divider(
+              const Divider(
                 height: 20,
               ),
               ListTile(
-                title: PText(
+                title: const PText(
                   "About",
                   fontSize: 18,
                   color: Colors.black,
                 ),
-                leading: Icon(
+                leading: const Icon(
                   Icons.info,
                   color: Colors.black,
                   size: 40,
                 ),
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => AboutPage(),
+                    builder: (context) => const AboutPage(),
                   ));
                 },
               ),
-              Divider(
+              const Divider(
                 height: 20,
               ),
               ListTile(
-                title: PText(
+                title: const PText(
                   "Contact Us",
                   fontSize: 18,
                   color: Colors.black,
                 ),
-                leading: Icon(
+                leading: const Icon(
                   Icons.contact_mail,
                   color: Colors.black,
                   size: 40,
@@ -155,7 +155,8 @@ class Trainer extends StatelessWidget {
             children: [
               Expanded(
                 child: GridView.builder(
-                    gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                    gridDelegate:
+                        const SliverGridDelegateWithMaxCrossAxisExtent(
                       maxCrossAxisExtent: 200,
                       crossAxisSpacing: 10,
                       mainAxisSpacing: 10,
@@ -175,7 +176,7 @@ class Trainer extends StatelessWidget {
                           children: [
                             ClipRRect(
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
+                                  const BorderRadius.all(Radius.circular(10)),
                               child: Image.asset(trainer.picture ?? '',
                                   height:
                                       MediaQuery.of(context).size.height * 0.25,

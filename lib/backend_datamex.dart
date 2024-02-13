@@ -442,7 +442,7 @@ List<WLEX> wlexList = [
     ins13: 'Cycling.\n',
 
     ins14: '\n',
-    picture1: 'asset/image/exercise/wl/11.jpeg',
+    picture1: 'asset/image/exercise/wl/11.jpg',
     //ex2
     exname2: 'Plank',
     mintime2: '30 second',

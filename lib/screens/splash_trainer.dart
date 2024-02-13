@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../log/login.dart';
 import '../log/signup.dart';
 import '../reuseable/text_constraint.dart';
-import 'trainers.dart';
 
 class Trainer_Splash extends StatelessWidget {
   const Trainer_Splash({super.key});
@@ -25,7 +25,7 @@ class Trainer_Splash extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * 0.5,
               ),
               Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
                         Color.fromARGB(255, 18, 18, 18),
@@ -37,19 +37,19 @@ class Trainer_Splash extends StatelessWidget {
                     borderRadius: BorderRadius.only(
                         topRight: Radius.circular(20),
                         bottomRight: Radius.circular(20))),
-                child: Padding(
+                child: const Padding(
                   padding: EdgeInsets.all(10),
                   child: Text(
                     'RESHAPING YOUR BODY WITH OUR',
                     style: TextStyle(
-                      color: const Color.fromARGB(255, 3, 222, 14),
+                      color: Color.fromARGB(255, 3, 222, 14),
                       fontSize: 20,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
                 ),
               ),
-              PText(
+              const PText(
                 'Over More Than 20 Personal Trainer For Achieving Your Fitness Goals.',
                 color: Color.fromARGB(255, 248, 253, 248),
                 fontSize: 20,
@@ -62,15 +62,16 @@ class Trainer_Splash extends StatelessWidget {
                     decoration: BoxDecoration(
                         gradient: LinearGradient(
                           colors: [
-                            Color.fromARGB(255, 139, 139, 142).withOpacity(0.5),
-                            Color.fromARGB(255, 18, 18, 18)
+                            const Color.fromARGB(255, 139, 139, 142)
+                                .withOpacity(0.5),
+                            const Color.fromARGB(255, 18, 18, 18)
                           ],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                         ),
                         borderRadius: BorderRadius.circular(20)),
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
+                    child: const Padding(
+                      padding: EdgeInsets.all(10.0),
                       child: PText(
                         ' Our services are designed to guide and support you on your journey to a healthier you.\n Start your fitness journey today!',
                         fontSize: 16,
@@ -86,10 +87,10 @@ class Trainer_Splash extends StatelessWidget {
                   child: GestureDetector(
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => Registration(),
+                        builder: (context) => Login(),
                       ));
                     },
-                    child: CircleAvatar(
+                    child: const CircleAvatar(
                       radius: 30,
                       backgroundColor: Color.fromARGB(255, 3, 222, 14),
                       child: Icon(

@@ -1,5 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:trainer_trained/PredModel.dart';
+import 'package:trainer_trained/log/login.dart';
 import 'package:trainer_trained/model/mex_model.dart';
 
 import 'package:trainer_trained/reuseable/text_constraint.dart';
@@ -15,7 +17,9 @@ import 'package:trainer_trained/screens/trainers.dart';
 import 'bmi.dart';
 
 class Home extends StatelessWidget {
-  const Home({super.key});
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+
+  Home({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,14 +27,14 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         leading: Builder(
           builder: (context) => IconButton(
-            icon: new Icon(
+            icon: const Icon(
               Icons.menu,
               size: 30,
             ),
             onPressed: () => Scaffold.of(context).openDrawer(),
           ),
         ),
-        title: Text(
+        title: const Text(
           'EXERCISES',
           style: TextStyle(
               fontSize: 26,
@@ -38,6 +42,29 @@ class Home extends StatelessWidget {
               fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
+        actions: [
+          MaterialButton(
+            onPressed: () async {
+              await _auth.signOut();
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => Login(),
+              ));
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5),
+                color: Colors.black,
+              ),
+              child: const Padding(
+                padding: EdgeInsets.all(4.0),
+                child: Icon(
+                  Icons.logout_outlined,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
       drawer: Drawer(
         backgroundColor: Colors.white,
@@ -45,7 +72,7 @@ class Home extends StatelessWidget {
           child: ListView(
             children: <Widget>[
               ListTile(
-                title: PText(
+                title: const PText(
                   "Exercises",
                   fontSize: 18,
                   color: Colors.black,
@@ -57,11 +84,11 @@ class Home extends StatelessWidget {
                   ));
                 },
               ),
-              Divider(
+              const Divider(
                 height: 20,
               ),
               ListTile(
-                title: PText(
+                title: const PText(
                   "Choose Trainer",
                   fontSize: 18,
                   color: Colors.black,
@@ -69,15 +96,15 @@ class Home extends StatelessWidget {
                 leading: Image.asset('asset/image/pred.png'),
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => PredModel(),
+                    builder: (context) => const PredModel(),
                   ));
                 },
               ),
-              Divider(
+              const Divider(
                 height: 20,
               ),
               ListTile(
-                title: PText(
+                title: const PText(
                   "Trainers",
                   fontSize: 18,
                   color: Colors.black,
@@ -85,15 +112,15 @@ class Home extends StatelessWidget {
                 leading: Image.asset('asset/image/trainericons.png'),
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => Trainer(),
+                    builder: (context) => const Trainer(),
                   ));
                 },
               ),
-              Divider(
+              const Divider(
                 height: 20,
               ),
               ListTile(
-                title: PText(
+                title: const PText(
                   "Calculate BMI",
                   fontSize: 18,
                   color: Colors.black,
@@ -106,16 +133,16 @@ class Home extends StatelessWidget {
                   ));
                 },
               ),
-              Divider(
+              const Divider(
                 height: 20,
               ),
               ListTile(
-                title: PText(
+                title: const PText(
                   "About",
                   fontSize: 18,
                   color: Colors.black,
                 ),
-                leading: Icon(
+                leading: const Icon(
                   Icons.info,
                   color: Colors.black,
                   size: 40,
@@ -126,16 +153,16 @@ class Home extends StatelessWidget {
                   ));
                 },
               ),
-              Divider(
+              const Divider(
                 height: 20,
               ),
               ListTile(
-                title: PText(
+                title: const PText(
                   "Contact Us",
                   fontSize: 18,
                   color: Colors.black,
                 ),
-                leading: Icon(
+                leading: const Icon(
                   Icons.contact_mail,
                   color: Colors.black,
                   size: 40,
@@ -165,7 +192,7 @@ class Home extends StatelessWidget {
                       MEX mex = mexList[index];
 
                       return Padding(
-                        padding: EdgeInsets.all(5),
+                        padding: const EdgeInsets.all(5),
                         child: Stack(
                           children: [
                             ClipRRect(
@@ -222,27 +249,28 @@ class Home extends StatelessWidget {
                                             Navigator.of(context)
                                                 .push(MaterialPageRoute(
                                               builder: (context) =>
-                                                  WeightLossPage(),
+                                                  const WeightLossPage(),
                                             ));
                                           } else if (index == 2) {
                                             Navigator.of(context)
                                                 .push(MaterialPageRoute(
-                                              builder: (context) => YogaPage(),
+                                              builder: (context) =>
+                                                  const YogaPage(),
                                             ));
                                           } else if (index == 3) {
                                             Navigator.of(context)
                                                 .push(MaterialPageRoute(
                                               builder: (context) =>
-                                                  PowerLiftingPage(),
+                                                  const PowerLiftingPage(),
                                             ));
                                           }
                                         },
                                         style: ButtonStyle(
                                             backgroundColor:
                                                 MaterialStateProperty.all(
-                                                    Color.fromARGB(
+                                                    const Color.fromARGB(
                                                         255, 3, 222, 14))),
-                                        child: EXHText(
+                                        child: const EXHText(
                                           'Try',
                                           ls: 3,
                                           color: Colors.black,

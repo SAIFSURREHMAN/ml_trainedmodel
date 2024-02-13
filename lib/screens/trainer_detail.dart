@@ -5,7 +5,7 @@ import '../reuseable/text_constraint.dart';
 class TrainerDetail extends StatelessWidget {
   final TRAINER trainer;
 
-  TrainerDetail(this.trainer, {super.key});
+  const TrainerDetail(this.trainer, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class TrainerDetail extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ClipRRect(
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                  borderRadius: const BorderRadius.all(Radius.circular(10)),
                   child: Image.asset(trainer.picture ?? '',
                       height: MediaQuery.of(context).size.height * 0.4,
                       fit: BoxFit.cover,
@@ -35,7 +35,7 @@ class TrainerDetail extends StatelessWidget {
                   color: Colors.black,
                   weight: FontWeight.w600,
                 ),
-                Align(
+                const Align(
                   alignment: Alignment.bottomLeft,
                   child: EXHText(
                     'AWARDS',
@@ -52,10 +52,10 @@ class TrainerDetail extends StatelessWidget {
                   color: Colors.black,
                   weight: FontWeight.normal,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
-                Align(
+                const Align(
                   alignment: Alignment.bottomLeft,
                   child: EXHText(
                     'SPECIALITY',
@@ -72,7 +72,7 @@ class TrainerDetail extends StatelessWidget {
                   color: Colors.black,
                   weight: FontWeight.normal,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 EXHText(
@@ -81,7 +81,7 @@ class TrainerDetail extends StatelessWidget {
                   color: Colors.black,
                   weight: FontWeight.normal,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Center(
@@ -91,16 +91,16 @@ class TrainerDetail extends StatelessWidget {
                       height: 50,
                       width: 300,
                       decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 15, 31, 76),
+                          color: const Color.fromARGB(255, 15, 31, 76),
                           borderRadius: BorderRadius.circular(20)),
                       child: Center(
                         child: RichText(
                           text: TextSpan(
                             children: [
-                              WidgetSpan(
+                              const WidgetSpan(
                                 child: Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 2.0),
+                                  padding:
+                                      EdgeInsets.symmetric(horizontal: 2.0),
                                   child: Icon(
                                     Icons.call_outlined,
                                     color: Colors.white,
@@ -110,7 +110,7 @@ class TrainerDetail extends StatelessWidget {
                               ),
                               TextSpan(
                                   text: trainer.contact ?? 'Trainer Contact',
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     fontSize: 24,
                                     color: Colors.white,
                                   )),

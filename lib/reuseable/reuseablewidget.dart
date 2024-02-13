@@ -8,7 +8,7 @@ TextField reUsableTF(String text, IconData icon, bool isPasswordType,
     obscureText: isPasswordType,
     enableSuggestions: !isPasswordType,
     autocorrect: !isPasswordType,
-    cursorColor: Color.fromARGB(255, 3, 86, 13),
+    cursorColor: const Color.fromARGB(255, 3, 86, 13),
     decoration: InputDecoration(
       prefixIcon: Icon(
         icon,
@@ -41,6 +41,6 @@ TextField reUsableTFML(
       labelStyle:
           const TextStyle(color: Color.fromARGB(255, 71, 70, 70), fontSize: 18),
     ),
-    keyboardType: TextInputType.numberWithOptions(),
+    keyboardType: const TextInputType.numberWithOptions(),
   );
 }

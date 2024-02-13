@@ -32,7 +32,7 @@ class _ContactUsPageState extends State<ContactUsPage> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: Text('Contact Us'),
+        title: const Text('Contact Us'),
         backgroundColor: Colors.white, // Set app bar background color
       ),
       drawer: Drawer(
@@ -41,7 +41,7 @@ class _ContactUsPageState extends State<ContactUsPage> {
           child: ListView(
             children: <Widget>[
               ListTile(
-                title: PText(
+                title: const PText(
                   "Exercises",
                   fontSize: 18,
                   color: Colors.black,
@@ -53,11 +53,11 @@ class _ContactUsPageState extends State<ContactUsPage> {
                   ));
                 },
               ),
-              Divider(
+              const Divider(
                 height: 20,
               ),
               ListTile(
-                title: PText(
+                title: const PText(
                   "Choose Trainer",
                   fontSize: 18,
                   color: Colors.black,
@@ -65,15 +65,15 @@ class _ContactUsPageState extends State<ContactUsPage> {
                 leading: Image.asset('asset/image/pred.png'),
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => PredModel(),
+                    builder: (context) => const PredModel(),
                   ));
                 },
               ),
-              Divider(
+              const Divider(
                 height: 20,
               ),
               ListTile(
-                title: PText(
+                title: const PText(
                   "Trainers",
                   fontSize: 18,
                   color: Colors.black,
@@ -81,15 +81,15 @@ class _ContactUsPageState extends State<ContactUsPage> {
                 leading: Image.asset('asset/image/trainericons.png'),
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => Trainer(),
+                    builder: (context) => const Trainer(),
                   ));
                 },
               ),
-              Divider(
+              const Divider(
                 height: 20,
               ),
               ListTile(
-                title: PText(
+                title: const PText(
                   "Calculate BMI",
                   fontSize: 18,
                   color: Colors.black,
@@ -102,16 +102,16 @@ class _ContactUsPageState extends State<ContactUsPage> {
                   ));
                 },
               ),
-              Divider(
+              const Divider(
                 height: 20,
               ),
               ListTile(
-                title: PText(
+                title: const PText(
                   "About",
                   fontSize: 18,
                   color: Colors.black,
                 ),
-                leading: Icon(
+                leading: const Icon(
                   Icons.info,
                   color: Colors.black,
                   size: 40,
@@ -122,16 +122,16 @@ class _ContactUsPageState extends State<ContactUsPage> {
                   ));
                 },
               ),
-              Divider(
+              const Divider(
                 height: 20,
               ),
               ListTile(
-                title: PText(
+                title: const PText(
                   "Contact Us",
                   fontSize: 18,
                   color: Colors.black,
                 ),
-                leading: Icon(
+                leading: const Icon(
                   Icons.contact_mail,
                   color: Colors.black,
                   size: 40,
@@ -153,7 +153,7 @@ class _ContactUsPageState extends State<ContactUsPage> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 'Contact Information',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
@@ -161,42 +161,42 @@ class _ContactUsPageState extends State<ContactUsPage> {
                   color: Colors.black,
                 ),
               ),
-              SizedBox(height: 20),
-              ListTile(
+              const SizedBox(height: 20),
+              const ListTile(
                 leading: Icon(
                   Icons.email,
                   size: 40, // Increase icon size
                   color: Colors.black,
                 ),
-                title: Text('Email: contact@example.com',
-                    style: TextStyle(
-                      color: Colors.black,
-                    )), // Text color
+                title: PText(
+                  'Email: saifrehman005@gmail.com',
+                  color: Colors.black,
+                ), // Text color
               ),
-              ListTile(
+              const ListTile(
                 leading: Icon(
                   Icons.phone,
                   size: 40, // Increase icon size
                   color: Colors.black,
                 ),
-                title: Text('Phone: +123-456-7890',
-                    style: TextStyle(
-                      color: Colors.black,
-                    )), // Text color
+                title: PText(
+                  'Phone: 03129220552',
+                  color: Colors.black,
+                ), // Text color
               ),
-              ListTile(
+              const ListTile(
                 leading: Icon(
                   Icons.location_on,
                   size: 40, // Increase icon size
                   color: Colors.black,
                 ),
-                title: Text('Address: 123 Main St, City, Country',
-                    style: TextStyle(
-                      color: Colors.black,
-                    )), // Text color
+                title: PText(
+                  'Address: Sindh Madersatul Islam University, II chundrigarh Road, Karachi',
+                  color: Colors.black,
+                ), // Text color
               ),
-              SizedBox(height: 20),
-              Text(
+              const SizedBox(height: 20),
+              const Text(
                 'Send Us a Message',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
@@ -204,18 +204,18 @@ class _ContactUsPageState extends State<ContactUsPage> {
                   color: Colors.black,
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Form(
                   key: key,
                   child: Column(
                     children: [
                       TextFormField(
                         controller: _nameTextController,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           labelText: 'Your Name',
                           labelStyle: TextStyle(
                             color: Colors.black,
-                            fontSize: 20, // Increase font size
+                            fontSize: 16, // Increase font size
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(
@@ -227,16 +227,16 @@ class _ContactUsPageState extends State<ContactUsPage> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       TextFormField(
                         controller: _emailTextController,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           labelText: 'Your Email',
                           labelStyle: TextStyle(
                             color: Colors.black,
-                            fontSize: 20, // Increase font size
+                            fontSize: 16, // Increase font size
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(
@@ -248,16 +248,16 @@ class _ContactUsPageState extends State<ContactUsPage> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       TextFormField(
                         controller: _messageTextController,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           labelText: 'Message',
                           labelStyle: TextStyle(
                             color: Colors.black,
-                            fontSize: 20, // Increase font size
+                            fontSize: 16, // Increase font size
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(
@@ -270,10 +270,18 @@ class _ContactUsPageState extends State<ContactUsPage> {
                         ),
                         maxLines: 4,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor:
+                              Color(0xff2e7b5b), // Button background color
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(
+                                10.0), // Set the border radius
+                          ),
+                        ),
                         onPressed: () async {
                           if (key.currentState!.validate()) {
                             String name = _nameTextController.text;
@@ -293,41 +301,15 @@ class _ContactUsPageState extends State<ContactUsPage> {
                           }
                         },
                         child: Text(
-                          'Send Message',
+                          'Send Your Review',
                           style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20, // Increase font size
+                            color: Colors.white,
+                            fontSize: 18, // Increase font size
                           ),
-                        ),
-                        style: ElevatedButton.styleFrom(
-                          foregroundColor: Colors.white,
-                          backgroundColor:
-                              Colors.greenAccent, // Button text color
                         ),
                       ),
                     ],
                   )),
-              // SizedBox(height: 20),
-              // Container(
-              //   // Wrap the button with a Container
-              //   color: Colors.white, // Set background color for the button
-              //   child: ElevatedButton(
-              //     onPressed: () {
-              //       // Implement sending the message
-              //     },
-              //     child: Text(
-              //       'Send Message',
-              //       style: TextStyle(
-              //         color: Colors.black,
-              //         fontSize: 20, // Increase font size
-              //       ),
-              //     ),
-              //     style: ElevatedButton.styleFrom(
-              //       foregroundColor: Colors.white,
-              //       backgroundColor: Colors.greenAccent, // Button text color
-              //     ),
-              //   ),
-              // ),
             ],
           ),
         ),

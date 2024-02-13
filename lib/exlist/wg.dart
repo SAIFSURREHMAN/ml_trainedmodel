@@ -6,7 +6,7 @@ import 'package:trainer_trained/detailpageEx/detailpagewg.dart';
 import 'package:trainer_trained/reuseable/text_constraint.dart';
 
 class WeightGainPage extends StatefulWidget {
-  WeightGainPage();
+  const WeightGainPage({super.key});
 
   @override
   State<WeightGainPage> createState() => _WeightGainPageState();
@@ -24,9 +24,9 @@ class _WeightGainPageState extends State<WeightGainPage> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Center(
+              const Center(
                 child: Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding: EdgeInsets.all(10.0),
                   child: EXHText(
                     'WEIGHT GAIN',
                     fontSize: 22,
@@ -36,7 +36,7 @@ class _WeightGainPageState extends State<WeightGainPage> {
               ),
               Expanded(
                 child: GridView.builder(
-                  gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                  gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                     maxCrossAxisExtent: 200,
                     crossAxisSpacing: 8,
                     mainAxisSpacing: 8, // Set the spacing between rows
@@ -46,7 +46,7 @@ class _WeightGainPageState extends State<WeightGainPage> {
                     WGEX wgex = wgexList[index];
 
                     return Padding(
-                      padding: EdgeInsets.all(5),
+                      padding: const EdgeInsets.all(5),
                       child: Stack(
                         children: [
                           ClipRRect(
@@ -102,11 +102,11 @@ class _WeightGainPageState extends State<WeightGainPage> {
                                     style: ButtonStyle(
                                       backgroundColor:
                                           MaterialStateProperty.all(
-                                        Color.fromARGB(255, 3, 222, 14)
+                                        const Color.fromARGB(255, 3, 222, 14)
                                             .withOpacity(0.7),
                                       ),
                                     ),
-                                    child: EXHText(
+                                    child: const EXHText(
                                       'Try',
                                       ls: 2,
                                       color: Colors.white,
@@ -146,15 +146,15 @@ class _WeightGainPageState extends State<WeightGainPage> {
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
-                        Color.fromRGBO(62, 167, 78, 1),
+                        const Color.fromRGBO(62, 167, 78, 1),
                         Colors.black.withOpacity(0.8)
                       ],
                     ),
                     borderRadius: BorderRadius.circular(25),
                   ),
-                  child: Padding(
-                    padding: const EdgeInsets.only(
-                        top: 5, left: 20, right: 20, bottom: 5),
+                  child: const Padding(
+                    padding:
+                        EdgeInsets.only(top: 5, left: 20, right: 20, bottom: 5),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,

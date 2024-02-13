@@ -5,7 +5,7 @@ import '../reuseable/text_constraint.dart';
 class DetailPageWg extends StatelessWidget {
   final WGEX wgex;
 
-  DetailPageWg(this.wgex);
+  const DetailPageWg(this.wgex, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class DetailPageWg extends StatelessWidget {
             child: Column(
               children: [
                 FirstContainer(wgex),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 SecondContainer(wgex),
@@ -31,14 +31,14 @@ class DetailPageWg extends StatelessWidget {
 }
 
 class FirstContainer extends StatelessWidget {
-  late final WGEX wgex;
+  final WGEX wgex;
 
-  FirstContainer(this.wgex);
+  const FirstContainer(this.wgex, {super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         border:
             Border.all(color: Colors.black, style: BorderStyle.solid, width: 3),
@@ -94,7 +94,7 @@ class FirstContainer extends StatelessWidget {
             color: Colors.black,
             weight: FontWeight.w400,
           ),
-          EXHText(
+          const EXHText(
             'INSTRUCTIONS:',
             fontSize: 18,
             color: Colors.black,
@@ -102,13 +102,13 @@ class FirstContainer extends StatelessWidget {
           ),
           RichText(
             text: TextSpan(
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 16.0,
                 color: Colors.black,
               ),
               children: [
                 if (wgex.ins11!.isNotEmpty)
-                  WidgetSpan(
+                  const WidgetSpan(
                     child: Icon(Icons.arrow_forward,
                         size: 12, color: Colors.black),
                   ),
@@ -117,7 +117,7 @@ class FirstContainer extends StatelessWidget {
                     text: '${wgex.ins11}',
                   ),
                 if (wgex.ins12!.isNotEmpty)
-                  WidgetSpan(
+                  const WidgetSpan(
                     child: Icon(Icons.arrow_forward,
                         size: 12, color: Colors.black),
                   ),
@@ -126,7 +126,7 @@ class FirstContainer extends StatelessWidget {
                     text: '${wgex.ins12}',
                   ),
                 if (wgex.ins13!.isNotEmpty)
-                  WidgetSpan(
+                  const WidgetSpan(
                     child: Icon(Icons.arrow_forward,
                         size: 12, color: Colors.black),
                   ),
@@ -135,7 +135,7 @@ class FirstContainer extends StatelessWidget {
                     text: '${wgex.ins13}',
                   ),
                 if (wgex.ins14!.isNotEmpty)
-                  WidgetSpan(
+                  const WidgetSpan(
                     child: Icon(Icons.arrow_forward,
                         size: 12, color: Colors.black),
                   ),
@@ -216,7 +216,7 @@ class SecondContainer extends StatelessWidget {
             color: Colors.black,
             weight: FontWeight.w400,
           ),
-          EXHText(
+          const EXHText(
             'INSTRUCTIONS:',
             fontSize: 18,
             color: Colors.black,
@@ -224,13 +224,13 @@ class SecondContainer extends StatelessWidget {
           ),
           RichText(
             text: TextSpan(
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 16.0,
                 color: Colors.black,
               ),
               children: [
                 if (wgex.ins21!.isNotEmpty)
-                  WidgetSpan(
+                  const WidgetSpan(
                     child: Icon(Icons.arrow_forward,
                         size: 12, color: Colors.black),
                   ),
@@ -239,7 +239,7 @@ class SecondContainer extends StatelessWidget {
                     text: '${wgex.ins21}',
                   ),
                 if (wgex.ins22!.isNotEmpty)
-                  WidgetSpan(
+                  const WidgetSpan(
                     child: Icon(Icons.arrow_forward,
                         size: 12, color: Colors.black),
                   ),
@@ -248,7 +248,7 @@ class SecondContainer extends StatelessWidget {
                     text: '${wgex.ins22}',
                   ),
                 if (wgex.ins23!.isNotEmpty)
-                  WidgetSpan(
+                  const WidgetSpan(
                     child: Icon(Icons.arrow_forward,
                         size: 12, color: Colors.black),
                   ),
@@ -257,7 +257,7 @@ class SecondContainer extends StatelessWidget {
                     text: '${wgex.ins23}',
                   ),
                 if (wgex.ins24!.isNotEmpty)
-                  WidgetSpan(
+                  const WidgetSpan(
                     child: Icon(Icons.arrow_forward,
                         size: 12, color: Colors.black),
                   ),

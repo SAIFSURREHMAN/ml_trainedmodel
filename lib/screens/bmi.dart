@@ -31,7 +31,7 @@ class _BMICalculatorState extends State<BMICalculator> {
           backgroundColor: Colors.greenAccent.withOpacity(0.4),
           leading: Builder(
             builder: (context) => IconButton(
-              icon: new Icon(
+              icon: const Icon(
                 Icons.menu,
                 size: 30,
                 color: Colors.black,
@@ -39,7 +39,7 @@ class _BMICalculatorState extends State<BMICalculator> {
               onPressed: () => Scaffold.of(context).openDrawer(),
             ),
           ),
-          title: Text(
+          title: const Text(
             'BMI CALCULATOR',
             style: TextStyle(
                 fontSize: 20, color: Colors.black, fontWeight: FontWeight.w500),
@@ -51,33 +51,8 @@ class _BMICalculatorState extends State<BMICalculator> {
           child: DrawerHeader(
             child: ListView(
               children: <Widget>[
-                // Padding(
-                //   padding: const EdgeInsets.only(top: 20.0),
-                //   child: ListTile(
-                //     title: PText(
-                //       "Register",
-                //       color: Colors.black,
-                //       fontSize: 24,
-                //     ),
-                //     subtitle: PText(
-                //       'Connect With Us',
-                //       fontSize: 20,
-                //       color: Colors.black,
-                //     ),
-                //     leading: Icon(
-                //       Icons.login_rounded,
-                //       color: Colors.black,
-                //       size: 50,
-                //     ),
-                //     // onTap: () {
-                //     //   Navigator.of(context).push(MaterialPageRoute(
-                //     //     builder: (context) => LoginPage(),
-                //     //   ));
-                //     // },
-                //   ),
-                // ),
                 ListTile(
-                  title: PText(
+                  title: const PText(
                     "Exercises",
                     fontSize: 18,
                     color: Colors.black,
@@ -89,11 +64,11 @@ class _BMICalculatorState extends State<BMICalculator> {
                     ));
                   },
                 ),
-                Divider(
+                const Divider(
                   height: 20,
                 ),
                 ListTile(
-                  title: PText(
+                  title: const PText(
                     "Choose Trainer",
                     fontSize: 18,
                     color: Colors.black,
@@ -101,15 +76,15 @@ class _BMICalculatorState extends State<BMICalculator> {
                   leading: Image.asset('asset/image/pred.png'),
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => PredModel(),
+                      builder: (context) => const PredModel(),
                     ));
                   },
                 ),
-                Divider(
+                const Divider(
                   height: 20,
                 ),
                 ListTile(
-                  title: PText(
+                  title: const PText(
                     "Trainers",
                     fontSize: 18,
                     color: Colors.black,
@@ -117,15 +92,15 @@ class _BMICalculatorState extends State<BMICalculator> {
                   leading: Image.asset('asset/image/trainericons.png'),
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => Trainer(),
+                      builder: (context) => const Trainer(),
                     ));
                   },
                 ),
-                Divider(
+                const Divider(
                   height: 20,
                 ),
                 ListTile(
-                  title: PText(
+                  title: const PText(
                     "Calculate BMI",
                     fontSize: 18,
                     color: Colors.black,
@@ -138,16 +113,16 @@ class _BMICalculatorState extends State<BMICalculator> {
                     ));
                   },
                 ),
-                Divider(
+                const Divider(
                   height: 20,
                 ),
                 ListTile(
-                  title: PText(
+                  title: const PText(
                     "About",
                     fontSize: 18,
                     color: Colors.black,
                   ),
-                  leading: Icon(
+                  leading: const Icon(
                     Icons.info,
                     color: Colors.black,
                     size: 40,
@@ -158,16 +133,16 @@ class _BMICalculatorState extends State<BMICalculator> {
                     ));
                   },
                 ),
-                Divider(
+                const Divider(
                   height: 20,
                 ),
                 ListTile(
-                  title: PText(
+                  title: const PText(
                     "Contact Us",
                     fontSize: 18,
                     color: Colors.black,
                   ),
-                  leading: Icon(
+                  leading: const Icon(
                     Icons.contact_mail,
                     color: Colors.black,
                     size: 40,
@@ -185,18 +160,18 @@ class _BMICalculatorState extends State<BMICalculator> {
         resizeToAvoidBottomInset: false,
         body: Container(
           height: MediaQuery.of(context).size.height,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               colors: [
                 Color.fromARGB(255, 12, 196, 89),
-                const Color.fromARGB(255, 9, 8, 9)
+                Color.fromARGB(255, 9, 8, 9)
               ],
             ),
           ),
           child: Padding(
-            padding: EdgeInsets.all(19),
+            padding: const EdgeInsets.all(19),
             child: Expanded(
               child: Stack(
                 children: [
@@ -219,20 +194,21 @@ class _BMICalculatorState extends State<BMICalculator> {
                             style: const TextStyle(
                                 color: Colors.white, fontSize: 18),
                             cursorColor: Colors.white,
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                               label: Text('Weight'),
                               prefixIcon: Icon(
                                 Icons.monitor_weight_outlined,
                                 color: Colors.white,
                               ),
-                              enabledBorder: const OutlineInputBorder(
+                              enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                       color: Color.fromARGB(255, 2, 52, 4))),
-                              labelStyle: const TextStyle(
+                              labelStyle: TextStyle(
                                   color: Color.fromARGB(255, 227, 223, 223),
                                   fontSize: 18),
                             ),
-                            keyboardType: TextInputType.numberWithOptions(),
+                            keyboardType:
+                                const TextInputType.numberWithOptions(),
                           ),
                         ),
                         Padding(
@@ -249,26 +225,26 @@ class _BMICalculatorState extends State<BMICalculator> {
                                   style: const TextStyle(
                                       color: Colors.white, fontSize: 18),
                                   cursorColor: Colors.white,
-                                  decoration: InputDecoration(
+                                  decoration: const InputDecoration(
                                     label: Text('Height (Feet)'),
                                     prefixIcon: Icon(
                                       Icons.height,
                                       color: Colors.white,
                                     ),
-                                    enabledBorder: const OutlineInputBorder(
+                                    enabledBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                             color:
                                                 Color.fromARGB(255, 2, 52, 4))),
-                                    labelStyle: const TextStyle(
+                                    labelStyle: TextStyle(
                                         color:
                                             Color.fromARGB(255, 227, 223, 223),
                                         fontSize: 18),
                                   ),
                                   keyboardType:
-                                      TextInputType.numberWithOptions(),
+                                      const TextInputType.numberWithOptions(),
                                 ),
                               ),
-                              SizedBox(width: 16.0),
+                              const SizedBox(width: 16.0),
                               Expanded(
                                 child: TextField(
                                   onChanged: (value) {
@@ -279,23 +255,23 @@ class _BMICalculatorState extends State<BMICalculator> {
                                   style: const TextStyle(
                                       color: Colors.white, fontSize: 18),
                                   cursorColor: Colors.white,
-                                  decoration: InputDecoration(
+                                  decoration: const InputDecoration(
                                     label: Text('Inch'),
                                     prefixIcon: Icon(
                                       Icons.height,
                                       color: Colors.white,
                                     ),
-                                    enabledBorder: const OutlineInputBorder(
+                                    enabledBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                             color:
                                                 Color.fromARGB(255, 2, 52, 4))),
-                                    labelStyle: const TextStyle(
+                                    labelStyle: TextStyle(
                                         color:
                                             Color.fromARGB(255, 227, 223, 223),
                                         fontSize: 18),
                                   ),
                                   keyboardType:
-                                      TextInputType.numberWithOptions(),
+                                      const TextInputType.numberWithOptions(),
                                 ),
                               ),
                             ],
@@ -305,10 +281,12 @@ class _BMICalculatorState extends State<BMICalculator> {
                           padding: const EdgeInsets.all(16.0),
                           child: ElevatedButton(
                             onPressed: () {
+                              FocusScope.of(context).unfocus();
+
                               calculateBMI();
                               showResultDialog();
                             },
-                            child: Text(
+                            child: const Text(
                               'Calculate BMI',
                               style: TextStyle(
                                   letterSpacing: 3, color: Colors.black),
@@ -322,11 +300,11 @@ class _BMICalculatorState extends State<BMICalculator> {
                                 borderRadius: BorderRadius.circular(20),
                                 color: Colors.white),
                             child: DataTable(
-                              columns: [
+                              columns: const [
                                 DataColumn(label: Text('BMI Category')),
                                 DataColumn(label: Text('BMI Range')),
                               ],
-                              rows: [
+                              rows: const [
                                 DataRow(cells: [
                                   DataCell(Text('Underweight')),
                                   DataCell(Text('BMI < 18.5')),
@@ -382,13 +360,13 @@ class _BMICalculatorState extends State<BMICalculator> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('BMI Result'),
+          title: const Text('BMI Result'),
           content: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
               Text('Your BMI is: ${bmi.toStringAsFixed(2)}'),
-              SizedBox(height: 8.0),
+              const SizedBox(height: 8.0),
               Text('BMI Category: $bmiCategory'),
             ],
           ),
@@ -398,7 +376,7 @@ class _BMICalculatorState extends State<BMICalculator> {
                 resetValues();
                 Navigator.of(context).pop();
               },
-              child: Text('OK'),
+              child: const Text('OK'),
             ),
           ],
         );
